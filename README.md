@@ -252,6 +252,7 @@ So, if for example you haven't followed the default pinout when soldering and wo
 Say you'd like to swap L/MX, and R/Z, you'd press the buttons in this order:
 
 ![image](img/remap_ex2.png)
+
 **Not Pictured: up2 (left hand up):** up2 should be the 21st button you press, after up (bottom right pinky).
 
 When plugging the board in, wait for 3+ seconds before starting to press any buttons.
