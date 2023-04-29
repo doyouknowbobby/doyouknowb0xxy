@@ -9,6 +9,7 @@
 - [Advised modes](#advisedModes)
 - [Melee mode notes](#meleeModeNotes)
 - [Wired Fight Pad Pro mode logic](#wfppModeNotes)
+- [Xbox 360 mode logic](#xbox360ModeNotes)
 - [8KRO Keyboard mappings](#keyboardMappings)
 - [Adapter mode information](#adapterModeInformation)
 - [Runtime remapping information](#runtimeRemappingInformation)
@@ -102,7 +103,7 @@ If you reconnect the board in BOOTSEL mode, you won't see the .uf2 file anymore.
 
 ### Modes
 
-As of this release, 13 modes are built-in.
+As of this release, 15 modes are built-in.
 
 - GP16 (by default, CRight) => BOOTSEL mode. This allows for updating the firmware without taking apart the controller to access the Pico.
 
@@ -120,6 +121,10 @@ As of this release, 13 modes are built-in.
 
 - GP0 (by default, Start) => 8KRO Keyboard (8 Keys set DAC algorithm + 8KRO Keyboard USB configuration). See lower for mapping.
 
+- GP14 (by default, A) => XInput (Xbox360 DAC algorithm + Xbox360 USB configuration). See lower for mapping.
+
+- GP13 (by default, Cleft) => XInput (Melee DAC algorithm + Xbox360 USB configuration). See lower for mapping.
+
 - Plugged into USB, nothing pressed => Melee GCC to USB adapter mode (Melee F1 DAC algorithm + Adapter USB configuration).
 
 <a name="advisedModes"/>
@@ -128,8 +133,9 @@ As of this release, 13 modes are built-in.
 - Playing Melee resp. P+ on console => Melee resp. P+ + Joybus
 - Playing Melee resp. P+ on PC => Melee resp. P+ + Adapter mode
 - Playing Ult on Switch or PC => Ultimate + Adapter mode
-- Playing other PC games => Melee + HID or 8KeysSet + Keyboard
+- Playing other PC games => Melee + HID or 8KeysSet + Keyboard or Xbox360 + Xbox360 or Melee + Xbox360
 - Playing other games on Switch => WFPP + WFPP
+- Playing other games on Xbox (requires Brooks Wingman XB) => Xbox360 + Xbox360 or Melee + Xbox360
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => Melee/P+ + HID & configure the HID
 
 Configuring the HID means: selecting the Frame1 profile in top right corner of the configuration window (Controllers > Standard Controller > Configure), changing the selecfed device to "pico-rectangle - HID with triggers" and reconfiguring the Control stick Up/Down & C-Stick Up/Down inputs.
@@ -192,6 +198,28 @@ Button mappings:
 - C-Right => b
 - C-Down => c
 - A => v
+
+
+<a name="xbox360ModeNotes"/>
+
+### Xbox360 mode logic
+
+With the Melee F1 DAC algorithm, Start is mapped to Start (Menu). L, R and Z are respectively mapped to LT, RT and RB (ZR). LB (ZR), Back (View), Home, LS Press, and RS Press are inaccessible.
+
+In dedicated mode, Modifiers and LS/MS are repurposed. This means you can only access cardinals and diagonals on the control stick. Start, B and the control stick have additional buttons mapped when combined with MS.
+- LS => LB (ZL)
+- Z => RB (ZR)
+- L => LT
+- R => RT
+- MX => LS Press
+- MY => RS Press
+- Start => Start (Menu)
+- MS and Left => Dpad left
+- MS and Right => Dpad right
+- MS and Up => Dpad up
+- MS and Down => Dpad down
+- MS and Start => Home
+- MS and B => Back (View)
 
 <a name="adapterModeInformation"/>
 
