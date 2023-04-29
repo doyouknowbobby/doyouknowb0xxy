@@ -204,22 +204,22 @@ Button mappings:
 
 ### Xbox360 mode logic
 
-With the Melee F1 DAC algorithm, Start is mapped to Start (Menu). L, R and Z are respectively mapped to LT, RT and RB (ZR). LB (ZR), Back (View), Home, LS Press, and RS Press are inaccessible.
+With the Melee F1 DAC algorithm, Start is mapped to Start (Menu). L, R and Z are respectively mapped to LT, RT and ZR (RB). ZR (LB), Back (View), Home, LS Press, and RS Press are inaccessible.
 
 In dedicated mode, Modifiers and LS/MS are repurposed. This means you can only access cardinals and diagonals on the control stick. Start, B and the control stick have additional buttons mapped when combined with MS.
-- LS => LB (ZL)
-- Z => RB (ZR)
+- LS => ZL (LB)
+- Z => ZR (RB)
 - L => LT
 - R => RT
 - MX => LS Press
 - MY => RS Press
 - Start => Start (Menu)
+- MS and Start => Home (Xbox)
+- MS and B => Back (View)
 - MS and Left => Dpad left
 - MS and Right => Dpad right
 - MS and Up => Dpad up
 - MS and Down => Dpad down
-- MS and Start => Home
-- MS and B => Back (View)
 
 <a name="adapterModeInformation"/>
 
