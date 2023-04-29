@@ -111,7 +111,7 @@ As of this release, 15 modes are built-in.
 
 - Not plugged into USB => Console mode (Melee F1 DAC algorithm + Joybus), unless you press GP2 or GP7 (by default Right and MY), in which case you enter P+ mode, or GP6 (by default MX), in which case you enter Ultimate mode. If you're not plugged into USB, you enter this mode.
 
-- GP21 / GP22 / GP10 (by default, X/Y/LS) resp. => HID controller with Melee / Ult / P+ logic resp.
+- GP21 / GP22 / GP20 (by default, X/Y/LS) resp. => HID controller with Melee / Ult / P+ logic resp.
 
 - GP7 / GP6 (by default, MY/MX) => P+ / Ult resp. GCC to USB adapter mode (P+/Ult DAC algorithm + Adapter USB configuration).
 
@@ -252,12 +252,13 @@ So, if for example you haven't followed the default pinout when soldering and wo
 Say you'd like to swap L/MX, and R/Z, you'd press the buttons in this order:
 
 ![image](img/remap_ex2.png)
+**Not Pictured: up2 (left hand up):** up2 should be the 21st button you press, after up (bottom right pinky).
 
 When plugging the board in, wait for 3+ seconds before starting to press any buttons.
 
-The remapping will be committed when you've pressed 20 different buttons. You must restart (i.e unplug/replug) to enter another mode. The pins you can map something to are GP 0-22 and GP 26-27, i.e all accessible pins EXCEPT GP28, that is dedicated to the GC Data pin.
+The remapping will be committed when you've pressed 21 different buttons. You must restart (i.e unplug/replug) to enter another mode. The pins you can map something to are GP 0-22 and GP 26-27, i.e all accessible pins EXCEPT GP28, that is dedicated to the GC Data pin.
 
-If it doesn't appear to work, double check all 20 of your buttons work. Note that runtime remapping doesn't change what buttons you need to press to enter a given mode, as it is the pin number that matters.
+If it doesn't appear to work, double check all 21 of your buttons work. Note that runtime remapping doesn't change what buttons you need to press to enter a given mode, as it is the pin number that matters.
 
 <a name="howToWireTheBoard"/>
 
