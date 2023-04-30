@@ -10,6 +10,8 @@ namespace WiredFightPadProDefault {
 
 void actuateWFPPReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
+void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet);
+
 }
 }
 #endif

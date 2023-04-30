@@ -10,6 +10,8 @@ namespace UltimateF1 {
 
 GCReport getGCReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
+GCReport getGCMacroReport(GpioToButtonSets::F1::ButtonSet buttonSet);
+
 }
 }
 

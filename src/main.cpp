@@ -9,7 +9,6 @@
 #include "dac_algorithms/melee_F1.hpp"
 #include "dac_algorithms/project_plus_F1.hpp"
 #include "dac_algorithms/ultimate_F1.hpp"
-#include "dac_algorithms/ultimate_macro_F1.hpp"
 #include "dac_algorithms/set_of_8_keys.hpp"
 #include "dac_algorithms/wired_fight_pad_pro_default.hpp"
 #include "dac_algorithms/xbox_360.hpp"
@@ -57,7 +56,7 @@ int main() {
     #endif
     ;
 
-    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 7, 6, 5, 4, 2, keyboardPin }; // DO NOT USE PIN GP15
+    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 3, 2, 1, keyboardPin }; // DO NOT USE PIN GP15
 
     for (uint8_t modePin : modePins) {
         gpio_init(modePin);
@@ -115,6 +114,11 @@ int main() {
         DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
     });
 
+    // ? - GP12 - CUp - Leverless/Xbox360 (aka XInput)
+    if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
+        DACAlgorithms::Xbox360::actuateLeverlessReport(GpioToButtonSets::F1::defaultConversion());
+    });
+
     // 27 - GP21 - X - Melee / HID
     if (!gpio_get(21)) USBConfigurations::HidWithTriggers::enterMode([](){
         USBConfigurations::HidWithTriggers::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
@@ -155,9 +159,14 @@ int main() {
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // ? - GP1 - up2 : F1 / ultimateMacro / adapter
+    // ? - GP3 - Down: F1 / wired_fight_pad_pro_leverless / wired_fight_pad_pro
+    if (!gpio_get(3)) USBConfigurations::WiredFightPadPro::enterMode([](){
+        DACAlgorithms::WiredFightPadProDefault::actuateLeverlessReport(GpioToButtonSets::F1::defaultConversion());
+    });
+
+    // ? - GP1 - up2 : F1 / ultimate_macro / adapter
     if (!gpio_get(1)) USBConfigurations::GccToUsbAdapter::enterMode([](){
-        USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateMacroF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
+        USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
     // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
