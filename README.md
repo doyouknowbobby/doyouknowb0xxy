@@ -130,6 +130,8 @@ As of this release, 13 modes are built-in.
 - Playing Ult on Switch or PC => Ultimate + Adapter mode
 - Playing other PC games => Melee + HID or 8KeysSet + Keyboard
 - Playing other games on Switch => WFPP + WFPP
+- Playing other games on Xbox (requires Brooks Wingman XB) => Xbox360 + Xbox360 or Melee + Xbox360 or WFPP + WFPP
+- Playing other games on PlayStation (requires Brooks Wingman XE) => Xbox360 + Xbox360 or WFPP + WFPP
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => Melee/P+ + HID & configure the HID
 
 Configuring the HID means: selecting the Frame1 profile in top right corner of the configuration window (Controllers > Standard Controller > Configure), changing the selecfed device to "pico-rectangle - HID with triggers" and reconfiguring the Control stick Up/Down & C-Stick Up/Down inputs.
