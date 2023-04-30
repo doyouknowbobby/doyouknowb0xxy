@@ -9,6 +9,7 @@
 #include "dac_algorithms/melee_F1.hpp"
 #include "dac_algorithms/project_plus_F1.hpp"
 #include "dac_algorithms/ultimate_F1.hpp"
+#include "dac_algorithms/ultimate_macro_F1.hpp"
 #include "dac_algorithms/set_of_8_keys.hpp"
 #include "dac_algorithms/wired_fight_pad_pro_default.hpp"
 #include "dac_algorithms/xbox_360.hpp"
@@ -97,12 +98,23 @@ int main() {
                 return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
+
+        if (!gpio_get(1)) { // ?-GP1 : F1 / ultimateMacro
+            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+                return DACAlgorithms::UltimateMacroF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
+            });
+        }
         
         // Else: F1 / Melee
         CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
     }
 
     // Else:
+
+    // ?? - GP12 - CUp - Leverless / XInput
+    if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
+        DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
+    });
     
     // 17 - GP13 - CLeft - Melee / XInput
     if (!gpio_get(13)) USBConfigurations::Xbox360::enterMode([](){
@@ -152,6 +164,11 @@ int main() {
     // 6 - GP4 - Left: F1 / wired_fight_pad_pro_default / wired_fight_pad_pro
     if (!gpio_get(4)) USBConfigurations::WiredFightPadPro::enterMode([](){
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
+    });
+
+    // ? - GP1 - up2 : F1 / ultimateMacro / adapter
+    if (!gpio_get(6)) USBConfigurations::GccToUsbAdapter::enterMode([](){
+        USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateMacroF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
     // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard

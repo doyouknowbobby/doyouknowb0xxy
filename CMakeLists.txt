@@ -25,6 +25,7 @@ add_executable(
   src/dac_algorithms/melee_F1.cpp
   src/dac_algorithms/project_plus_F1.cpp
   src/dac_algorithms/ultimate_F1.cpp
+  src/dac_algorithms/ultimate_macro_F1.cpp
   src/dac_algorithms/set_of_8_keys.cpp
   src/dac_algorithms/wired_fight_pad_pro_default.cpp
   src/dac_algorithms/xbox_360.cpp
@@ -56,6 +57,7 @@ add_executable(
   src/dac_algorithms/melee_F1.cpp
   src/dac_algorithms/project_plus_F1.cpp
   src/dac_algorithms/ultimate_F1.cpp
+  src/dac_algorithms/ultimate_macro_F1.cpp
   src/dac_algorithms/set_of_8_keys.cpp
   src/dac_algorithms/wired_fight_pad_pro_default.cpp
   src/dac_algorithms/xbox_360.cpp
