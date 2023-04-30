@@ -96,10 +96,10 @@ void actuateLeverlessReport (GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool plus = buttonSet.a;
     
     USBConfigurations::WiredFightPadPro::hidReport = {
-        .y=buttonSet.y,         // Y -> Y
-        .b=buttonSet.x,         // X -> B
-        .a=buttonSet.b,         // B -> A
-        .x=buttonSet.r,         // R -> X
+        .y=buttonSet.r,         // R -> Y
+        .b=buttonSet.b,         // B -> B
+        .a=buttonSet.x,         // X -> A
+        .x=buttonSet.y,         // Y -> X
         .l=buttonSet.ls,        // LS -> L
         .r=buttonSet.ms,        // MS -> R
         .zl=buttonSet.z,        // Z -> ZL
