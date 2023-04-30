@@ -9,7 +9,7 @@
 - [Advised modes](#advisedModes)
 - [Melee mode notes](#meleeModeNotes)
 - [Wired Fight Pad Pro mode logic](#wfppModeNotes)
-- [Xbox 360 mode logic](#xbox360ModeNotes)
+- [XInput mode logic](#xbox360ModeNotes)
 - [8KRO Keyboard mappings](#keyboardMappings)
 - [Adapter mode information](#adapterModeInformation)
 - [Runtime remapping information](#runtimeRemappingInformation)
@@ -123,7 +123,7 @@ As of this release, 15 modes are built-in.
 
 - GP14 (by default, A) => XInput (Xbox360 DAC algorithm + Xbox360 USB configuration). See lower for mapping.
 
-- GP13 (by default, Cleft) => XInput (Melee DAC algorithm + Xbox360 USB configuration). See lower for mapping.
+- GP13 (by default, CLeft) => XInput (Melee DAC algorithm + Xbox360 USB configuration). See lower for mapping.
 
 - Plugged into USB, nothing pressed => Melee GCC to USB adapter mode (Melee F1 DAC algorithm + Adapter USB configuration).
 
@@ -202,7 +202,9 @@ Button mappings:
 
 <a name="xbox360ModeNotes"/>
 
-### Xbox360 mode logic
+### XInput mode logic
+
+XInput mode is meant to provide extra compatibility options for PC and the Xbox family of consoles (Brooks Wingman XB required) by identifying as an Xbox 360 Controller.
 
 With the Melee F1 DAC algorithm, Start is mapped to Start (Menu). L, R and Z are respectively mapped to LT, RT and ZR (RB). ZR (LB), Back (View), Home, LS Press, and RS Press are inaccessible.
 
