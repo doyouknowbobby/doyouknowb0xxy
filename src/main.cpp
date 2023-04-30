@@ -98,12 +98,6 @@ int main() {
                 return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
-
-        if (!gpio_get(1)) { // ?-GP1 : F1 / ultimateMacro
-            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
-                return DACAlgorithms::UltimateMacroF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
-            });
-        }
         
         // Else: F1 / Melee
         CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
@@ -111,11 +105,6 @@ int main() {
 
     // Else:
 
-    // ?? - GP12 - CUp - Leverless / XInput
-    if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
-        DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
-    });
-    
     // 17 - GP13 - CLeft - Melee / XInput
     if (!gpio_get(13)) USBConfigurations::Xbox360::enterMode([](){
         USBConfigurations::Xbox360::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
@@ -167,7 +156,7 @@ int main() {
     });
 
     // ? - GP1 - up2 : F1 / ultimateMacro / adapter
-    if (!gpio_get(6)) USBConfigurations::GccToUsbAdapter::enterMode([](){
+    if (!gpio_get(1)) USBConfigurations::GccToUsbAdapter::enterMode([](){
         USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateMacroF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
