@@ -56,7 +56,7 @@ int main() {
     #endif
     ;
 
-    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 2, keyboardPin }; // DO NOT USE PIN GP15
+    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 2, 1, keyboardPin }; // DO NOT USE PIN GP15
 
     for (uint8_t modePin : modePins) {
         gpio_init(modePin);
@@ -159,6 +159,10 @@ int main() {
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
     });
 
+    // ? - GP1 - up2 : F1 / ultimate_macro / adapter
+    if (!gpio_get(1)) USBConfigurations::GccToUsbAdapter::enterMode([](){
+        USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));
+        
     // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
     if (!gpio_get(keyboardPin)) USBConfigurations::Keyboard8KRO::enterMode([](){
         DACAlgorithms::SetOf8Keys::actuate8KeysReport(GpioToButtonSets::F1::defaultConversion());
@@ -166,7 +170,6 @@ int main() {
 
     // Default: F1 / melee / adapter
     USBConfigurations::GccToUsbAdapter::enterMode(
-        [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));},
-        [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));}
-        );
+        [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));
+    });
 }
