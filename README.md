@@ -99,7 +99,7 @@ If you reconnect the board in BOOTSEL mode, you won't see the .uf2 file anymore.
 
 ### Modes
 
-As of this release, 16 modes are built-in.
+As of this release, 17 modes are built-in.
 
 - GP16 (by default, CRight) => BOOTSEL mode. This allows for updating the firmware without taking apart the controller to access the Pico.
 
@@ -115,7 +115,9 @@ As of this release, 16 modes are built-in.
 
 - GP2 / GP5 (by default, Right/L) resp. => Wired Fight Pad Pro with P+/Melee resp. logic (P+/Melee DAC algorithm + Wired Fight Pad Pro USB configuration).
 
-- GP4 (by default, Left) => Wired Fight Pad Pro with dedicated logic (Wired Fight Pad Pro DAC algorithm + Wired Fight Pad Pro USB configuration). See lower for DAC algorithm explanation.
+- GP4 (by default, Left) => Wired Fight Pad Pro with dedicated logic (Wired Fight Pad Pro default DAC algorithm + Wired Fight Pad Pro USB configuration). See lower for DAC algorithm explanation.
+
+- GP3 (by default, Down) => Wired Fight Pad Pro with Leverless Fightstick layout (Wired Fight Pad Pro Leverless DAC algorithm + Wired Fight Pad Pro USB configuration). See lower for DAC algorithm explanation.
 
 - GP0 (by default, Start) => 8KRO Keyboard (8 Keys set DAC algorithm + 8KRO Keyboard USB configuration). See lower for mapping.
 
@@ -133,8 +135,9 @@ As of this release, 16 modes are built-in.
 - Playing Melee resp. P+ on console => Melee resp. P+ + Joybus
 - Playing Melee resp. P+ on PC => Melee resp. P+ + Adapter mode
 - Playing Ult on Switch or PC => Ultimate + Adapter mode
-- Playing other games on Switch => WFPP + WFPP
+- Playing other games on Switch => WFPP + WFPP or WFPP + Leverless
 - Playing other games on PC => XInput (USB or Leverless) or 8KeysSet + Keyboard
+- Playing other games on PC with DirectInput => WFPP + WFPP or WFPP + Leverless
 - Playing other games on Xbox (requires Brooks Wingman XB) => XInput or Melee + Xbox360
 - Playing other games on PlayStation (requires Brooks Wingman XE) => XInput or WFPP + WFPP
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => Melee/P+ + HID & configure the HID
@@ -160,12 +163,50 @@ This is a "Wired Fight Pad Pro":
 With the Melee F1 DAC algorithm, Start is mapped to +. L, R and Z are respectively mapped to ZL, ZR and R. -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick).
 
 In dedicated mode, Modifiers and LS/MS are repurposed. This means you can only access cardinals and diagonals on the control stick.
-- LS => L
-- Z => R
-- L => ZL
+
+- B =>
+- X =>
 - R => ZR
+- Y =>
+- Z => R
+- LS => L
+- Up =>
+- MS =>
+- 
+- L => ZL
 - MX => -
 - MY => +
+- A =>
+
+- Start => Home
+- MS and Left => Dpad left
+- MS and Right => Dpad right
+- MS and Up => Dpad up
+- MS and Down => Dpad down
+- MS and Start => Photo
+
+#### Leverless mapping
+
+WFPP can also function as a leverless fightstick, offering a different default button mapping. It still is technically a WFPP, so you have two analog sticks and a d-pad for movement options, and movement is set to the left stick. It doesn't use the "melee-style" layout and is a little easier to remap and play other genres in.
+
+The face buttons are mapped directly to the first four buttons on the right hand, with the L/R triggers on the top two right most buttons, and ZL/ZR shoulders immediately underneath them.
+
+In this scheme you can only access cardinals and diagonals on the control sticks. *Start, MX and the control stick have additional buttons mapped when combined with L.*
+
+- B =>
+- X =>
+- R => ZR
+- Y =>
+- Z => R
+- LS => L
+- Up =>
+- MS =>
+- 
+- L => ZL
+- MX => -
+- MY => +
+- A =>
+
 - Start => Home
 - MS and Left => Dpad left
 - MS and Right => Dpad right
@@ -199,7 +240,6 @@ Button mappings:
 - C-Right => b
 - C-Down => c
 - A => v
-
 
 <a name="xbox360ModeNotes"/>
 
