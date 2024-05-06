@@ -18,6 +18,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 #### USB
 - [ ] Nothing Pressed - Melee (Adapter) mode
 - [ ] GP0 - 8KRO Keyboard
+- [ ] GP1 - Ultimate Macro (Adapter) mode
 - [ ] GP2 - Wired Fight Pad Pro with P+
 - [ ] GP4 - Wired Fight Pad Pro (dedicated)
 - [ ] GP5 - Wired Fight Pad Pro with Melee
