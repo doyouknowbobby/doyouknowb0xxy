@@ -19,6 +19,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] Nothing Pressed - Melee (Adapter) mode
 - [ ] GP0 - 8KRO Keyboard
 - [ ] GP2 - Wired Fight Pad Pro with P+
+- [ ] GP3 - Wired Fight Pad Pro (Leverless Fightstick)
 - [ ] GP4 - Wired Fight Pad Pro (dedicated)
 - [ ] GP5 - Wired Fight Pad Pro with Melee
 - [ ] GP6 - Ultimate (Adapter) mode
