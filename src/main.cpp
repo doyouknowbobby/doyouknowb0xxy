@@ -56,7 +56,7 @@ int main() {
     #endif
     ;
 
-    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 2, keyboardPin }; // DO NOT USE PIN GP15
+    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 3, 2, keyboardPin }; // DO NOT USE PIN GP15
 
     for (uint8_t modePin : modePins) {
         gpio_init(modePin);
@@ -157,6 +157,11 @@ int main() {
     // 6 - GP4 - Left: F1 / wired_fight_pad_pro_default / wired_fight_pad_pro
     if (!gpio_get(4)) USBConfigurations::WiredFightPadPro::enterMode([](){
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
+    });
+
+    // ? - GP3 - Down: F1 / wired_fight_pad_pro_leverless / wired_fight_pad_pro
+    if (!gpio_get(3)) USBConfigurations::WiredFightPadPro::enterMode([](){
+        DACAlgorithms::WiredFightPadProDefault::actuateLeverlessReport(GpioToButtonSets::F1::defaultConversion());
     });
 
     // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
