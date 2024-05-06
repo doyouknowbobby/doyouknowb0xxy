@@ -242,7 +242,7 @@ XInput can also function as a leverless fightstick, offering a different default
 The face buttons are mapped directly to the first four buttons on the right hand, with the L/R triggers on the top two right most buttons, and L/R bumpers immediately underneath them.
 
 In this scheme you can only access cardinals and diagonals on the control sticks. 
-*Start, MX and the control stick have additional buttons mapped when combined with L.*
+*Start, MX, B and the control stick have additional buttons mapped when combined with L.*
 
 - B => A
 - X => B
@@ -260,7 +260,7 @@ In this scheme you can only access cardinals and diagonals on the control sticks
 
 - Start => Start (Menu)
 - L and Start => Home (Xbox)
-- L and MY => Back (View)
+- L and B => Back (View)
 - L and Left => Dpad left
 - L and Right => Dpad right
 - L and Up => Dpad up
