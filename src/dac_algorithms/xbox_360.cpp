@@ -40,12 +40,12 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.b = b;
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
-	xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
-	xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
-	xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
-	xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
-	xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-	xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+    xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
+    xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
+    xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
 };
 
 // Map face and shoulder buttons to top two rows on right side. We're a fightstick now.
@@ -83,7 +83,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     // MX / A / MX + Modifier Button -> LS Press / RS Press / Back
     bool l3 = buttonSet.mx && (!mod);
     bool r3 = buttonSet.a;
-    bool back = buttonSet.mx && mod;
+    bool back = buttonSet.b && mod;
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
