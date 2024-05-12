@@ -16,14 +16,14 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] GP6 - Ultimate (Joybus) mode
 - [ ] GP7 - P+ mode
 #### USB
-- [ ] Nothing Pressed - Melee (Adapter) mode
+- [ ] Nothing Pressed - XInput (Leverless Fightstick via Xbox360)
 - [ ] GP0 - 8KRO Keyboard
 - [ ] GP2 - Wired Fight Pad Pro with P+
 - [ ] GP4 - Wired Fight Pad Pro (dedicated)
 - [ ] GP5 - Wired Fight Pad Pro with Melee
 - [ ] GP6 - Ultimate (Adapter) mode
 - [ ] GP7 - P+ (Adapter) mode
-- [ ] GP12 - XInput (Leverless Fightstick via Xbox360)
+- [ ] GP12 - Melee (Adapter) mode
 - [ ] GP13 - XInput with Melee
 - [ ] GP14 - XInput (dedicated Xbox360)
 - [ ] GP16 - BOOTSEL
