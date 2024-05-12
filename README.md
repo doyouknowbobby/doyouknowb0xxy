@@ -125,9 +125,9 @@ As of this release, 17 modes are built-in.
 
 - GP13 (by default, CLeft) => XInput (Melee DAC algorithm + Xbox360 USB configuration). See lower for mapping.
 
-- GP12 (by default, CUp) => XInput (Xbox360 DAC algorithm + Xbox360 Leverless configuration). See lower for mapping.
+- GP12 (by default, CUp) => Melee GCC to USB adapter mode (Melee F1 DAC algorithm + Adapter USB configuration).
 
-- Plugged into USB, nothing pressed => Melee GCC to USB adapter mode (Melee F1 DAC algorithm + Adapter USB configuration).
+- Plugged into USB, nothing pressed => XInput (Xbox360 DAC algorithm + Xbox360 Leverless configuration). See lower for mapping.
 
 <a name="advisedModes"/>
 
@@ -299,8 +299,8 @@ In this scheme you can only access cardinals and diagonals on the control sticks
 - A => RS Press
 
 - Start => Start (Menu)
-- L and Start => Home (Xbox)
-- L and MY => Back (View)
+- L and R => Home (Xbox)
+- L and B => Back (View)
 - L and Left => Dpad left
 - L and Right => Dpad right
 - L and Up => Dpad up
