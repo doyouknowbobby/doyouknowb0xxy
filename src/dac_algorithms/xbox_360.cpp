@@ -76,9 +76,9 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool dUp = buttonSet.up && mod;
     bool dDown = buttonSet.down && mod;
 
-    // Start +/- Modifier button -> Home / Photo
-    bool start = buttonSet.start && (!mod);
-    bool home = buttonSet.start && mod;
+    // R +/- Modifier button -> Home / Photo
+    bool r = buttonSet.r && (!mod);
+    bool home = buttonSet.r && mod;
 
     // MX / A / MX + Modifier Button -> LS Press / RS Press / Back
     bool l3 = buttonSet.mx && (!mod);
@@ -90,7 +90,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.rightStickPress = r3;
     xInputReport.leftStickPress = l3;
     xInputReport.back = back;
-    xInputReport.start = start;
+    xInputReport.start = buttonSet.start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
@@ -101,7 +101,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.pad1 = 0;
     xInputReport.a = buttonSet.b;
     xInputReport.b = buttonSet.x;
-    xInputReport.x = buttonSet.r;
+    xInputReport.x = r;
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.ls ? 255 : 0;
     xInputReport.rightTrigger = buttonSet.ms ? 255 : 0;
