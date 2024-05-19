@@ -56,13 +56,13 @@ Find more details, including button mapping [here](docs/MODES.md).
 
 Enter Runtime Rempapping mode by holding `Up` when plugging in the controller.
 
-Find more details, including the order of button presses [here](docs/PROGRAMMING.md).
+Find more details, including the order of button presses [here](docs/PROGRAMMING.md#runtime-button-remapping).
 
 ### Updating Firmware
 
 Enter `BOOTSEL` mode by holding `CRight` when plugging in the controller while connected to a PC. You can then choose a new `.uf2` compiled binary to overwrite the current firmware.
 
-Find more details, including how to compile it yourself [here](docs/PROGRAMMING.md).
+Find more details, including how to compile it yourself [here](docs/PROGRAMMING.md#updating-the-firmware).
 
 ### Other Documentation
 
