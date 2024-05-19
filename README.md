@@ -2,7 +2,7 @@
 
 This is a modular, runtime-remappable and easily extensible digital controller software for the Raspberry Pi Pico, that can identify as various controllers such as a GCC to USB adapter, an Xbox controller, a Switch Pro-like controller, a generic controller and keyboard and communicate over the Joybus (Gamecube/Wii) and USB protocols and using various conversion logics, namely at least Melee, P+, Ultimate.
 
-It is intended for use with the Rana Digital controller/layout (standard frame1 "rectangle" layout with the addition of up2 in a WASD layout). Other Pico-based controllers will need to disable up2 (in code, then recompile) or via runtime-remapping every time its plugged in.
+It is intended for use with the Rana Digital controller/layout (standard frame1 "rectangle" layout with the addition of `up2` in a WASD layout). Other Pico-based controllers will need to disable `up2` (in code, then recompile) or via runtime-remapping.
 
 ## TOC
 
@@ -18,7 +18,7 @@ It is intended for use with the Rana Digital controller/layout (standard frame1 
 
 ### Safety Information
 
-Don't have this board plugged via USB and via its Gamecube port at the same time. This would feed the USB 5v to the 3v line of the console and likely damage it.
+Don't have this board plugged via USB and via its GameCube port at the same time. This would feed the USB 5v to the 3v line of the console and likely damage it.
 
 If you want to prevent this electrically, use Schottky diodes, or power VSYS with the 5v from the console and don't connect the console 3v. Be aware that doing this implies the controller won't work on consoles with broken rumble lines anymore.
 
@@ -29,38 +29,36 @@ If you want to prevent this electrically, use Schottky diodes, or power VSYS wit
 Hold a specified button while plugging the controller in, and that mode will be selected until the controller is disconnected.
 
 **The advised modes are the following**:
-- BOOTSEL mode for updating firmware => (CRight)
-- Runtime remapping mode => (Up)
+- `BOOTSEL` mode for updating firmware => (`CRight`)
+- Runtime remapping mode => (`Up`)
 - Playing Melee resp. P+ on console => Melee resp. P+ + Joybus
 - Playing Melee resp. P+ on PC => Melee resp. P+ + Adapter mode
-- Playing Ult on Switch or PC => Ultimate + Adapter mode
-- Playing other games on Switch => WFPP + WFPP (Left)
-- Playing other games on PC => XInput (USB or Leverless) or 8KeysSet + Keyboard 
-- Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (default) or XInput + Xbox360 (A) or Melee + Xbox360 (CLeft)
-- Playing other games on PlayStation (requires Brooks Wingman XE) => XInput or WFPP + WFPP
+- Playing Ultimate on Switch or PC => Ultimate + Adapter mode
+- Playing other games on Switch => WFPP + WFPP (`Left`)
+- Playing other games on PC => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or 8KeysSet + Keyboard (`Start`)
+- Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or Melee + Xbox360 (`CLeft`)
+- Playing other games on PlayStation (requires Brooks Wingman XE) =>  XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or WFPP + WFPP (`Left`)
+- Playing (non-Smash) platform fighters on Xbox or PC => Melee + Xbox360 (`CLeft`) or 
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => Melee/P+ + HID & configure the HID
 
-Find dedicated readme [here](docs/MODES.md).
+Find more details, including button mapping [here](docs/MODES.md).
 
 ### Runtime Button Remapping
 
+Enter Runtime Rempapping mode by holding `Up` when plugging in the controller.
 
-Find dedicated readme [here](docs/MAPPING.md).
+Find more details, including the order of button presses [here](docs/MAPPING.md).
 
 ### Updating Firmware
 
-- Download the latest release (on the right of the Github page), or compile yourself from the source files.
+Enter `BOOTSEL` mode by holding `CRight` when plugging in the controller while connected to a PC. You can then choose a new `.uf2` compiled binary to overwrite the current firmware.
 
-- Plug in your Raspberry Pico to your computer by holding pin GP16 (the CRight button in the advised pinout) via USB (i.e BOOTSEL mode), or while holding the "BOOTSEL" white button on the board.
-
-- The board should appear as an external drive. Put the .uf2 in there. The board should disconnect and be ready for use.
-
-If you reconnect the board in BOOTSEL mode, you won't see the .uf2 file anymore. This is normal, expected behavior.
+Find more details, including the order of button presses [here](docs/MAPPING.md).
 
 ### Other Documentation
 
-* [Mode Select](docs/MODES.md)
-* [Button Mapping](docs/MAPPING.md)
+* [Modes and Button Mapping](docs/MODES.md)
+* [Button Remapping and Firmware Update](docs/MAPPING.md)
 * [JulienBernard3383279/pico-rectangle (Arte) README (v 1.2.4)](docs/vendor/arte/README_arte_v124.md)
 * [rana-sylvatica/pico-rectangle-rana-digital README (v 1.1.0)](docs/vendor/rd/README_rana-digital_v110.md)
 
@@ -77,8 +75,6 @@ In particular, when communicating over USB, device using this software may use t
 Thanks to:
 
 ### Contact
-
-<a name="contact"/>
 
 Discord: doyouknowbobby#1234567890
 
