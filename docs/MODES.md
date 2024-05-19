@@ -7,40 +7,36 @@ As of this release, 12 modes are built-in. There are two additional specialized 
 ## TOC
 
 0. [BOOTSEL](#bootsel)
-0. [REMAP](#remapping)
-2. [GCN (Ultimate)](#gcn-ultimate)
-3. [GCN (Melee)](#gcn-melee)
-4. [GCN (P+)](#gcn-plus)
-5. [Xbox360 (Leverless)](#xbox360-leverless)
-6. [Xbox360 (Dedicated)](#xbox360-dedicated)
-7. [WFPP (Dedicated)](#wfpp-dedicated)
-8. [8KRO Keyboard](#keyboard)
-9. [HID (Ultimate)](#hid-ultimate)
-10. [HID (Melee)](#hid-melee)
-11. [HID (P+)](#hid-plus)
-12. [WFPP (Melee)](#wfpp-melee)
-13. [WFPP (P+)](#wfpp-plus)
-14. [Xbox360 (Melee)](#xbox360-melee)
+0. [REMAP](#run-time-remapping)
+2. [GCN (Ultimate)](#ultimate)
+3. [GCN (Melee)](#melee)
+4. [GCN (P+)](#p)
+5. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
+6. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
+7. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
+8. [8KRO Keyboard](#8kro-keyboard)
+9. [HID (Ultimate)](#hid-controllers)
+10. [HID (Melee)](#hid-controllers)
+11. [HID (P+)](#hid-controllers)
+12. [WFPP (Melee)](#wired-fight-pad-pro-melee)
+13. [WFPP (P+)](#wired-fight-pad-pro-p)
+14. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
 
 ## Programming Modes
 
 There are two specialized modes for programming the firmware.
 
+### BOOTSEL 
+
 - `GP16` (by default, `CRight`) => `BOOTSEL` mode. This allows for updating the firmware without taking apart the controller to access the Pico.
 
-### How to program your board:
+See dedicated [README](PROGRAMMING.md#updating-the-firmware).
 
-- Download the latest release (on the right of the Github page) or compile it yourself from source code.
+### Run-time Remapping
 
-- Plug in your Raspberry Pico to your computer by holding pin `GP16` (the `CRight` button in the advised pinout) via USB (i.e `BOOTSEL` mode), or while holding the `BOOTSEL` white button on the board.
-
-- The board should appear as an external drive. Put the `.uf2` in there. The board should disconnect and be ready for use.
-
-If you reconnect the board in `BOOTSEL` mode, you won't see the `.uf2` file anymore. This is normal, expected behavior.
-
-### How to remap your board:
-
-- `GP17` (by default, `Up`) => Runtime remapping. See dedicated [README](MAPPING.md).
+- `GP17` (by default, `Up`) => Runtime remapping. 
+  
+See dedicated [README](PROGRAMMING.md#runtime-button-remapping).
 
 ## GameCube Controller Modes
 
@@ -71,7 +67,7 @@ There are several modes that can be used either in USB modes (pretending to be a
 
 XInput mode is meant to provide extra compatibility options for PC and the Xbox family of consoles (Brooks Wingman XB required) by identifying as an Xbox 360 Controller. Movement controls map to the left stick, and the C buttons map to the right stick.
 
-#### XInput (Leverless Fighstick)
+#### XInput (Leverless Fightstick)
 
 - `No Button` => XInput (Xbox360 DAC algorithm + Xbox360 Leverless USB configuration).
 
@@ -93,7 +89,7 @@ In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only
 ![image](../img/modes/xbox360_dedicated.png)
 ![image](../img/modes/xbox360_dedicated_mod.png)
 
-#### XInput (Xbox360 Controller)
+#### XInput (Xbox360 Controller Melee)
 
 - `GP13` (by default, `CLeft`) => XInput (Melee DAC algorithm + Xbox360 USB configuration).
 
