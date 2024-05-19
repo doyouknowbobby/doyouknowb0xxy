@@ -44,22 +44,22 @@ If you reconnect the board in `BOOTSEL` mode, you won't see the `.uf2` file anym
 
 ## GameCube Controller Modes
 
-There are several modes that can be used either in USB modes (pretending to be a GameCube controller plugged int a USB Adapter), and JoyBus mode (plugged in drectly with a GameCube compatible cable to a compatible console or physical USB Adapter).
+There are several modes that can be used either in USB modes (pretending to be a GameCube controller plugged int a USB Adapter), and Joybus mode (plugged in drectly with a GameCube compatible cable to a compatible console or physical USB Adapter).
 
 ### Ultimate 
 
-- `GP6` (by default, `MX`) => GCN (Ultimate) JoyBus mode.
+- `GP6` (by default, `MX`) => GCN (Ultimate) Joybus mode.
 - `GP6` (by default, `MX`) => GCN (Ultimate) USB adapter mode.
 
 ### Melee
-- `No button` => GCN (Melee) JoyBus mode.
+- `No button` => GCN (Melee) Joybus mode.
 - `GP12` (by default, `CUp`) => GCN (Melee) USB adapter mode.
   
 ![image](../img/modes/gcn_melee.png)
 ![image](../img/modes/gcn_melee_mod.png)
 
 ### P+
-- `GP2` / `GP7` (by default, `Right` / `MY`) => GCN (P+) JoyBus mode.
+- `GP2` / `GP7` (by default, `Right` / `MY`) => GCN (P+) Joybus mode.
 - `GP7` (by default, `MY`) => GCN (P+) USB adapter mode.
 
 ![image](../img/modes/gcn_plus.png)
