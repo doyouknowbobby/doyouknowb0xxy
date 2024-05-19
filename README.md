@@ -54,18 +54,18 @@ Find more details, including button mapping [here](docs/MODES.md).
 
 Enter Runtime Rempapping mode by holding `Up` when plugging in the controller.
 
-Find more details, including the order of button presses [here](docs/MAPPING.md).
+Find more details, including the order of button presses [here](docs/PROGRAMMING.md).
 
 ### Updating Firmware
 
 Enter `BOOTSEL` mode by holding `CRight` when plugging in the controller while connected to a PC. You can then choose a new `.uf2` compiled binary to overwrite the current firmware.
 
-Find more details, including the order of button presses [here](docs/MAPPING.md).
+Find more details, including the order of button presses [here](docs/PROGRAMMING.md).
 
 ### Other Documentation
 
 * [Modes and Button Mapping](docs/MODES.md)
-* [Button Remapping and Firmware Update](docs/MAPPING.md)
+* [Button Remapping and Firmware Update](docs/PROGRAMMING.md)
 * [JulienBernard3383279/pico-rectangle (Arte) README (v 1.2.4)](docs/vendor/arte/README_arte_v124.md)
 * [rana-sylvatica/pico-rectangle-rana-digital README (v 1.1.0)](docs/vendor/rd/README_rana-digital_v110.md)
 
