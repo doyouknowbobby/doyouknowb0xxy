@@ -2,7 +2,7 @@
 
 This is a modular, runtime-remappable and easily extensible digital controller software for the Raspberry Pi Pico, that can identify as various controllers such as a GCC to USB adapter, an Xbox controller, a Switch Pro-like controller, a generic controller and keyboard and communicate over the Joybus (Gamecube/Wii) and USB protocols and using various conversion logics, namely at least Melee, P+, Ultimate.
 
-It is intended for use with the Rana Digital controller/layout (standard frame1 "rectangle" layout with the addition of `up2` in a WASD layout). Other Pico-based controllers will need to disable `up2` (in code, then recompile) or via runtime-remapping.
+It is intended for use with the Rana Digital controller/layout (standard frame1 "rectangle" layout with the addition of `Up2` in a WASD layout). Other Pico-based controllers will need to disable `Up2` (in code, then recompile) or via runtime-remapping.
 
 ## TOC
 
@@ -62,12 +62,12 @@ Find more details, including the order of button presses [here](docs/PROGRAMMING
 
 Enter `BOOTSEL` mode by holding `CRight` when plugging in the controller while connected to a PC. You can then choose a new `.uf2` compiled binary to overwrite the current firmware.
 
-Find more details, including the order of button presses [here](docs/PROGRAMMING.md).
+Find more details, including how to compile it yourself [here](docs/PROGRAMMING.md).
 
 ### Other Documentation
 
-* [Modes and Button Mapping](docs/MODES.md)
-* [Button Remapping and Firmware Update](docs/PROGRAMMING.md)
+* [Mode Selection / Button Mapping](docs/MODES.md)
+* [Programming/Updating](docs/PROGRAMMING.md)
 * [JulienBernard3383279/pico-rectangle (Arte) README (v 1.2.4)](docs/vendor/arte/README_arte_v124.md)
 * [rana-sylvatica/pico-rectangle-rana-digital README (v 1.1.0)](docs/vendor/rd/README_rana-digital_v110.md)
 
