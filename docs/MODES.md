@@ -101,13 +101,21 @@ With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R`
 
 ### Nintendo Switch Controllers
 
+This is a "Wired Fight Pad Pro":
+
+![Image](../img/wfpp.png)
+
 #### Wired Fight Pad Pro (Nintendo Switch Controller)
 
 - `GP4` (by default, `Left`) => Wired Fight Pad Pro with dedicated logic (Wired Fight Pad Pro DAC algorithm + Wired Fight Pad Pro USB configuration).
 
+In dedicated mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick.
+
 #### Wired Fight Pad Pro (Melee)
 
 - `GP5` (by default, `L`) => Wired Fight Pad Pro with Melee logic (Melee DAC algorithm + Wired Fight Pad Pro USB configuration).
+
+With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are respectively mapped to ZL, ZR and R. That means -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick).
 
 #### Wired Fight Pad Pro (P+)
 
