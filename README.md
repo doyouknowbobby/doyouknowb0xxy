@@ -24,6 +24,13 @@ If you want to prevent this electrically, use Schottky diodes, or power VSYS wit
 
 ### Quick Start
 
+1. When plugging in via USB cable, the controller defaults to XInput + Leverles mode. This enables plug and play behavior for PCs and Xbox consoles without holding a button when plugging the controller in.
+![Image](img/modes/xbox360_leverless.png)
+![Image](img/modes/xbox360_leverless_mod.png)
+3. When plugging in via GameCube controller cable, the controller defaults to GCN + Melee mode. This enables plug and play behavior on GameCube, Wii, Wii U, Nintendo Switch, and PCs using a GameCube USB Adapter.
+![Image](img/modes/gcn_melee.png)
+![Image](img/modes/gcn_melee_mod.png)
+
 ### Changing Modes
 
 Hold a specified button while plugging the controller in, and that mode will be selected until the controller is disconnected.
