@@ -35,6 +35,8 @@ If you want to prevent this electrically, use Schottky diodes, or power VSYS wit
 
 Hold a specified button while plugging the controller in, and that mode will be selected until the controller is disconnected.
 
+![Image](img/modes/modes.png)
+
 **The advised modes are the following**:
 - `BOOTSEL` mode for updating firmware => (`CRight`)
 - Runtime remapping mode => (`Up`)
