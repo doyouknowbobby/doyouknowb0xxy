@@ -39,17 +39,17 @@ Hold a specified button while plugging the controller in, and that mode will be 
 ![Image](img/modes/modes.png)
 
 **The advised modes are the following**:
-- `BOOTSEL` mode for updating firmware => (`CRight`)
+- Updating Firmware (USB) => `BOOTSEL` (`CRight`)
 - Runtime remapping mode => (`Up`)
-- Playing Melee resp. P+ on console => Melee resp. P+ + Joybus
-- Playing Melee resp. P+ on PC => Melee resp. P+ + Adapter mode
-- Playing Ultimate on Switch or PC => Ultimate + Adapter mode
+- Playing Melee or. P+ on **console** => Melee + Joybus (`no button`) or P+ + Joybus (`MY`)
+- Playing Melee or P+ on PC (USB) => Melee + Adapter (`CUp`) or P+ + Adapter (`MY`)
+- Playing Ultimate on Switch or PC (USB) => Ultimate + Adapter (`MX`)
 - Playing other games on Switch => WFPP + WFPP (`Left`)
 - Playing other games on PC => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or 8KeysSet + Keyboard (`Start`)
-- Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or Melee + Xbox360 (`CLeft`)
+- Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or XInput + Melee (`CLeft`)
 - Playing other games on PlayStation (requires Brooks Wingman XE) =>  XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or WFPP + WFPP (`Left`)
-- Playing (non-Smash) platform fighters on Xbox or PC => Melee + Xbox360 (`CLeft`) or 
-- Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => Melee/P+ + HID & configure the HID
+- Playing (non-Smash) platform fighters on Xbox or PC => XInput + Melee (`CLeft`)
+- Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => HID + Melee (`X`) or HID + P+ (`LS`) & configure the HID
 
 Find more details, including button mapping [here](docs/MODES.md).
 
