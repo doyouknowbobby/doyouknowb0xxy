@@ -73,33 +73,34 @@ There are several things on my roadmap I have yet to implement, in no particular
 
 * Update and extend documentation.
     * Add competitive disclaimer.
-    * Add WFPP + WFPP button layout image.
+    * Add GCN + Ultimate button layout images.
     * Add WFPP + Melee/P+ button layout images.
     * Add HID + Melee/P+/Ultimate layout images.
+    * Add XInput + Melee/P+/Ultimate layout images.
     * Add PS4 button layout images (through Brooks Adapter + XInput).
 * Implement `Up2` button across **ALL** modes.
 * Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.
     * Change mod button and mapping as necessary.
     * Add WFPP + Leverless layout image.
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
-* Refactor and implement all SOCD implementations on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
-    * Add implementation for Capcom Cup SOCD
+* Refactor and implement all SOCD resolutions on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
+    * Add resolution for Capcom Cup SOCD
 
 ### Fightstick Branch
 
-* Add all relevant SOCD implementations for all leverless modes.
+* Add all relevant SOCD resolutions for all leverless modes.
 
 ### Platform Fighter Branch
 
-* Add all relevant SOCD implementations for all Melee/P+/Ultimate modes.
+* Add all relevant SOCD resolutions for all Melee/P+/Ultimate modes.
 * Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
     * Change default mode in GCN & USB
     * Add GCN + Ultimate "Macro" button layout image
 * Add WFPP + Ultimate DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
     * Change default mode in USB, take priority over previous changes to default
     * Add WFPP + Ultimate button layout image
+* Add Multiversus algorithm/mode
 * Add Rivals 2 algorithm/mode? 
-* Add Multiversus algorithm/mode? 
 
 ## Other Documentation
 
