@@ -106,7 +106,7 @@ There are several things on my roadmap I have yet to implement, in no particular
 * [Mode Selection / Button Mapping](docs/MODES.md)
 * [Programming/Updating](docs/PROGRAMMING.md)
 * [JulienBernard3383279/pico-rectangle (Arte) README (v 1.2.4)](docs/vendor/arte/README_arte_v124.md)
-* [rana-sylvatica/pico-rectangle-rana-digital README (v 1.1.0)](docs/vendor/rd/README_rana-digital_v110.md)
+* [rana-sylvatica/pico-rectangle-rana-digital README (v 1.1.0)](docs/vendor/rana/README_rana-digital_v110.md)
 
 ## LEGAL INFORMATION
 
