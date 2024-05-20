@@ -116,6 +116,38 @@ In dedicated mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can on
 ![WFPP + WFPP](../img/modes/wfpp_wfpp.png)
 ![WFPP + WFPP (mod)](../img/modes/wfpp_wfpp_mod.png)
 
+#### Wired Fight Pad Pro (Leverless Fightstick)
+
+WFPP can also function as a leverless fightstick, offering a different default button mapping. It still is technically a WFPP, so you have two analog sticks and a d-pad for movement options, and movement is set to the left stick. It doesn't use the "melee-style" layout and is a little easier to remap and play other genres in.
+
+The face buttons are mapped directly to the first four buttons on the right hand, with the L/R triggers on the top two right most buttons, and ZL/ZR shoulders immediately underneath them.
+
+In this scheme you can only access cardinals and diagonals on the control sticks. *Start, MX and the control stick have additional buttons mapped when combined with L.*
+
+- B =>
+- X =>
+- R => ZR
+- Y =>
+- Z => R
+- LS => L
+- Up =>
+- MS =>
+- 
+- L => ZL
+- MX => -
+- MY => +
+- A =>
+
+- Start => Home
+- MS and Left => Dpad left
+- MS and Right => Dpad right
+- MS and Up => Dpad up
+- MS and Down => Dpad down
+- MS and Start => Photo
+
+![WFPP + Leverless](../img/modes/wfpp_leverless.png)
+![WFPP + Leverless (mod)](../img/modes/wfpp_leverless_mod.png)
+
 #### Wired Fight Pad Pro (Melee)
 
 - `GP5` (by default, `L`) => Wired Fight Pad Pro with Melee logic (Melee DAC algorithm + Wired Fight Pad Pro USB configuration).
