@@ -146,7 +146,7 @@ The logic is that of the Frame1, with the slight side B and parasol dashing nerf
 
 This is a "Wired Fight Pad Pro":
 
-![image](../img/vendor/arte/wfpp.png)
+![image](img/wfpp.png)
 
 With the Melee F1 DAC algorithm, Start is mapped to +. L, R and Z are respectively mapped to ZL, ZR and R. -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick).
 
@@ -217,11 +217,11 @@ Note that you must release GP17 before the 3 seconds expire, or it will be consi
 
 So, if for example you haven't followed the default pinout when soldering and would like to go back to the default B0XX/F1, you'll press the buttons in this order:
 
-![image](../img/vendor/arte/remap_ex1.png)
+![image](img/remap_ex1.png)
 
 Say you'd like to swap L/MX, and R/Z, you'd press the buttons in this order:
 
-![image](../img/vendor/arte/remap_ex2.png)
+![image](img/remap_ex2.png)
 
 When plugging the board in, wait for 3+ seconds before starting to press any buttons.
 
@@ -236,16 +236,16 @@ If it doesn't appear to work, double check all 20 of your buttons work. Note tha
 Note: big thanks to Crane for the schematics !
 
 #### If you just have a GameCube cable :
-![image](../img/vendor/arte/pico_gcc_cable.png)
+![image](img/pico_gcc_cable.png)
 
 #### If you are using a third party cable :
-![image](../img/vendor/arte/3rd_party_cable.png)
+![image](img/3rd_party_cable.png)
 
 #### If you are using a generic USB-C breakout :
-![image](../img/vendor/arte/pico_usbc_breakout.png)
+![image](img/pico_usbc_breakout.png)
 
 #### If you are using a Model U breakout :
-![image](../img/vendor/arte/pico_model_u.png)
+![image](img/pico_model_u.png)
 
 Switches/buttons will have two pins. Connect one of them to Ground (daisy chaining advised) and the other to a Pico GPIO pin following the mapping shown in the images above.
 
