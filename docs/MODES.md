@@ -2,7 +2,7 @@
 
 As of this release, 12 modes are built-in. There are two additional specialized programming modes.
 
-![image](../img/modes/modes.png)
+![Modes](../img/modes/modes.png)
 
 ## TOC
 
@@ -47,19 +47,22 @@ There are several modes that can be used either in USB modes (pretending to be a
 - `GP6` (by default, `MX`) => GCN (Ultimate) Joybus mode.
 - `GP6` (by default, `MX`) => GCN (Ultimate) USB adapter mode.
 
+![GCN Ultimate](../img/modes/gcn_ultimate.png)
+![GCN Ultimate (mod)](../img/modes/gcn_ultimate_mod.png)
+
 ### Melee
 - `No button` => GCN (Melee) Joybus mode.
 - `GP12` (by default, `CUp`) => GCN (Melee) USB adapter mode.
   
-![image](../img/modes/gcn_melee.png)
-![image](../img/modes/gcn_melee_mod.png)
+![GCN Melee](../img/modes/gcn_melee.png)
+![GCN Melee (mod)](../img/modes/gcn_melee_mod.png)
 
 ### P+
 - `GP2` / `GP7` (by default, `Right` / `MY`) => GCN (P+) Joybus mode.
 - `GP7` (by default, `MY`) => GCN (P+) USB adapter mode.
 
-![image](../img/modes/gcn_plus.png)
-![image](../img/modes/gcn_plus_mod.png)
+![GCN Plus](../img/modes/gcn_plus.png)
+![GCN Plus (mod)](../img/modes/gcn_plus_mod.png)
 
 ## USB only Modes
 
@@ -77,8 +80,8 @@ The face buttons are mapped directly to the first four buttons on the right hand
 
 In this scheme you can only access cardinals and diagonals on the control sticks. `Start`, `MX` and the `Left Stick` have additional buttons mapped when combined with `L`.
 
-![image](../img/modes/xbox360_leverless.png)
-![image](../img/modes/xbox360_leverless_mod.png)
+![XInput + Leverless](../img/modes/xinput_leverless.png)
+![XInput + Leverless (mod)](../img/modes/xinput_leverless_mod.png)
 
 #### XInput (Xbox360 Controller)
 
@@ -86,8 +89,8 @@ In this scheme you can only access cardinals and diagonals on the control sticks
 
 In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick. `Start`, `B` and the `Left Stick` have additional buttons mapped when combined with `MS`.
 
-![image](../img/modes/xbox360_dedicated.png)
-![image](../img/modes/xbox360_dedicated_mod.png)
+![XInput + Xbox360](../img/modes/xinput_xbox360.png)
+![XInput + Xbox360 (mod)](../img/modes/xinput_xbox360_mod.png)
 
 #### XInput (Xbox360 Controller Melee)
 
@@ -95,11 +98,14 @@ In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only
 
 With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R` and `Z` are respectively mapped to LT, RT and ZR (aka RB). ZR (aka LB), Back (aka View), Home, LS Press, and RS Press are inaccessible.
 
+![XInput + Melee](../img/modes/xinput_melee.png)
+![XInput + Melee (mod)](../img/modes/xinput_melee_mod.png)
+
 ### Nintendo Switch Controllers
 
 This is a "Wired Fight Pad Pro":
 
-![Image](../img/wfpp.png)
+![Wired Fight Pad Pro](../img/wfpp.png)
 
 #### Wired Fight Pad Pro (Nintendo Switch Controller)
 
@@ -107,15 +113,24 @@ This is a "Wired Fight Pad Pro":
 
 In dedicated mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick.
 
+![WFPP + WFPP](../img/modes/wfpp_wfpp.png)
+![WFPP + WFPP (mod)](../img/modes/wfpp_wfpp_mod.png)
+
 #### Wired Fight Pad Pro (Melee)
 
 - `GP5` (by default, `L`) => Wired Fight Pad Pro with Melee logic (Melee DAC algorithm + Wired Fight Pad Pro USB configuration).
 
 With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are respectively mapped to ZL, ZR and R. That means -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick).
 
+![WFPP + Melee](../img/modes/wfpp_melee.png)
+![WFPP + Melee (mod)](../img/modes/wfpp_melee_mod.png)
+
 #### Wired Fight Pad Pro (P+)
 
 - `GP2` (by default, `Right`) => Wired Fight Pad Pro with P+ logic (P+ DAC algorithm + Wired Fight Pad Pro USB configuration).
+
+![WFPP + Melee](../img/modes/wfpp_plus.png)
+![WFPP + Melee (mod)](../img/modes/wfpp_plus_mod.png)
 
 ### PC Controllers
 
@@ -123,7 +138,7 @@ With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are re
 
 - `GP0` (by default, `Start`) => 8KRO Keyboard (8 Keys set DAC algorithm + 8KRO Keyboard USB configuration).
 
-![image](../img/modes/keyboard.png)
+![image](../img/modes/8kro_keyboard.png)
 
 #### HID Controllers
 
