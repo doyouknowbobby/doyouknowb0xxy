@@ -2,7 +2,11 @@
 
 This is a modular, runtime-remappable and easily extensible digital controller software for the Raspberry Pi Pico, that can identify as various controllers such as a GCC to USB adapter, an Xbox controller, a Switch Pro-like controller, a generic controller and keyboard and communicate over the Joybus (Gamecube/Wii) and USB protocols and using various conversion logics, namely at least Melee, P+, Ultimate.
 
-It is intended for use with the Rana Digital controller/layout (standard frame1 "rectangle" layout with the addition of `Up2` in a WASD layout). Other Pico-based controllers will need to disable `Up2` (in code, then recompile) or via runtime-remapping.
+It is intended for use with the [Rana Digital controller platform](https://github.com/rana-sylvatica/rana-digital), controller/layout (standard frame1 "rectangle" layout with the addition of `Up2` in a WASD layout). Other Pico-based controllers will need to disable `Up2` (in code, then recompile) or via runtime-remapping.
+
+It was forked from [Rana's fork](https://github.com/rana-sylvatica/pico-rectangle-rana-digital) of [Arte's original frameware](https://github.com/JulienBernard3383279/pico-rectangle).
+
+![Image](img/gpio_to_f1.png)
 
 ## TOC
 
