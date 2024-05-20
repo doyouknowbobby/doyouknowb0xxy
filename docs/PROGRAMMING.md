@@ -78,13 +78,11 @@ Note that you must release `GP17` before the 3 seconds expire, or it will be con
 
 So, if for example you haven't followed the default pinout when soldering and would like to go back to the default B0XX/F1, you'll press the buttons in this order:
 
-![image](../img/vendor/rd/remap_ex1.png)
+![image](../img/remap_order.png)
 
 Say you'd like to swap `L`/`MX`, and `R`/`Z`, you'd press the buttons in this order:
 
-![image](../img/vendor/rd/remap_ex2.png)
-
-**Not Pictured: `Up2` (left hand up):** `Up2` should be the 21st button you press, after `Up` (bottom right pinky).
+![image](../img/remap_example.png)
 
 When plugging the board in, wait for 3+ seconds before starting to press any buttons.
 
@@ -94,7 +92,7 @@ If it doesn't appear to work, double check all 21 of your buttons work. Note tha
 
 ## Making Changes to the Source Code
 
-You should do that. I did [that](https://github.com/doyouknowbobby/doyouknowb0xxy/). As did [the person before me](https://github.com/rana-sylvatica/pico-rectangle-rana-digital).
+You should do that. [I did that](https://github.com/doyouknowbobby/doyouknowb0xxy/). As did [the person before me](https://github.com/rana-sylvatica/pico-rectangle-rana-digital).
 
 ### Firmware explanation
 
