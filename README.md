@@ -73,7 +73,9 @@ Find more details, including how to compile it yourself [here](docs/PROGRAMMING.
 
 There are several things on my roadmap I have yet to implement, in no particular order:
 
-### Master branch
+<details>
+
+<summary>Master branch</summary>
 
 * Update and extend documentation.
     * Add competitive disclaimer.
@@ -89,12 +91,19 @@ There are several things on my roadmap I have yet to implement, in no particular
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
 * Refactor and implement all SOCD resolutions on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
     * Add resolution for Capcom Cup SOCD
+ 
+</details>
 
-### Fightstick Branch
+<details>
+<summary>Fightstick Branch</summary>
 
 * Add all relevant SOCD resolutions for all leverless modes.
 
-### Platform Fighter Branch
+</details>
+
+<details>
+
+<summary>Platform Fighter Branch</summary>
 
 * Add all relevant SOCD resolutions for all Melee/P+/Ultimate modes.
 * Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
@@ -104,7 +113,9 @@ There are several things on my roadmap I have yet to implement, in no particular
     * Change default mode in USB, take priority over previous changes to default
     * Add WFPP + Ultimate button layout image
 * Add Multiversus algorithm/mode
-* Add Rivals 2 algorithm/mode? 
+* Add Rivals 2 algorithm/mode?
+
+</details>
 
 ## Other Documentation
 
