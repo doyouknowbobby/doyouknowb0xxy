@@ -6,7 +6,7 @@ It is intended for use with the [Rana Digital controller platform](https://githu
 
 It was forked from [Rana's fork](https://github.com/rana-sylvatica/pico-rectangle-rana-digital) of [Arte's original frameware](https://github.com/JulienBernard3383279/pico-rectangle).
 
-![Image](img/gpio_to_f1.png)
+![Image](img/gpio_to_rd.png)
 
 ## TOC
 
