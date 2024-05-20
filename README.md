@@ -42,7 +42,10 @@ Hold a specified button while plugging the controller in, and that mode will be 
 
 ![Image](img/modes/modes.png)
 
-**The advised modes are the following**:
+<details>
+   
+<summary>Advised Modes:</summary>
+
 - Updating Firmware (USB) => `BOOTSEL` (`CRight`)
 - Runtime remapping mode => (`Up`)
 - Playing Melee or. P+ on **console** => Melee + Joybus (`no button`) or P+ + Joybus (`MY`)
@@ -55,7 +58,9 @@ Hold a specified button while plugging the controller in, and that mode will be 
 - Playing (non-Smash) platform fighters on Xbox or PC => XInput + Melee (`CLeft`)
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => HID + Melee (`X`) or HID + P+ (`LS`) & configure the HID
 
-Find more details, including button mapping [here](docs/MODES.md).
+</details>
+
+Find more details, including button mapping for each mode [here](docs/MODES.md).
 
 ## Runtime Button Remapping
 
