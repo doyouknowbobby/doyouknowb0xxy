@@ -13,14 +13,14 @@ As of this release, 12 modes are built-in. There are two additional specialized 
 4. [GCN (P+)](#p)
 5. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
 6. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
+7. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
 7. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
+7. [WFPP (Melee)](#wired-fight-pad-pro-melee)
+7. [WFPP (P+)](#wired-fight-pad-pro-p)
 8. [8KRO Keyboard](#8kro-keyboard)
 9. [HID (Ultimate)](#hid-controllers)
 10. [HID (Melee)](#hid-controllers)
 11. [HID (P+)](#hid-controllers)
-12. [WFPP (Melee)](#wired-fight-pad-pro-melee)
-13. [WFPP (P+)](#wired-fight-pad-pro-p)
-14. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
 
 ## Programming Modes
 
