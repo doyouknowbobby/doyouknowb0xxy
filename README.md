@@ -91,7 +91,7 @@ There are several things on my roadmap I have yet to implement, in no particular
     * Add XInput + Melee/P+/Ultimate layout images.
     * Add PS4 button layout images (through Brooks Adapter + XInput).
 * Implement `Up2` button across **ALL** modes.
-* Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.
+* ~~Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.~~
     * Change mod button and mapping as necessary.
     * Add WFPP + Leverless layout image.
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
