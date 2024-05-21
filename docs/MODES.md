@@ -1,26 +1,27 @@
 # Modes
 
-As of this release, 12 modes are built-in. There are two additional specialized programming modes.
+As of this release, 13 modes are built-in. There are two additional specialized programming modes.
 
 ![Modes](../img/modes/modes.png)
 
 ## TOC
 
 0. [BOOTSEL](#bootsel)
-0. [REMAP](#run-time-remapping)
+1. [REMAP](#run-time-remapping)
 2. [GCN (Ultimate)](#ultimate)
 3. [GCN (Melee)](#melee)
 4. [GCN (P+)](#p)
 5. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
 6. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
 7. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
-7. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
-7. [WFPP (Melee)](#wired-fight-pad-pro-melee)
-7. [WFPP (P+)](#wired-fight-pad-pro-p)
-8. [8KRO Keyboard](#8kro-keyboard)
-9. [HID (Ultimate)](#hid-controllers)
-10. [HID (Melee)](#hid-controllers)
-11. [HID (P+)](#hid-controllers)
+8. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
+9. [WFPP (Leverless)](#wired-fight-pad-pro-leverless-fightstick)
+10. [WFPP (Melee)](#wired-fight-pad-pro-melee)
+11. [WFPP (P+)](#wired-fight-pad-pro-p)
+12. [8KRO Keyboard](#8kro-keyboard)
+13. [HID (Ultimate)](#hid-controllers)
+14. [HID (Melee)](#hid-controllers)
+15. [HID (P+)](#hid-controllers)
 
 ## Programming Modes
 
