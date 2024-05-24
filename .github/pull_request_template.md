@@ -12,13 +12,13 @@ Remove DAC Algorithms -> ColecoVision
 Check the boxes for any mode that is affected by your changes. Make sure to note if these will apply to future modes using a certain DAC algorithm, Communications Protocol, or Button Set.
 #### Console
 - [ ] `No button` - Melee (Joybus) mode
-- [X] `GP1` - `Up2` - Ultimate Macro (Adapter) mode
+- [ ] `GP1` - `Up2` - Ultimate Macro (Adapter) mode
 - [ ] `GP2` - `Right` P+ (Joybus) mode
 - [ ] `GP6` - `MX` - Ultimate (Joybus) mode
 - [ ] `GP7` - `MY` - P+ (Joybus) mode
 #### USB
 - [ ] `No button` - XInput (Leverless Fightstick)
-- [ ] `GP0` - `Start` - 8KRO Keyboard
+- [X] `GP0` - `Start` - 8KRO Keyboard
 - [ ] `GP1` - `Up2` - Ultimate Macro (Adapter) mode
 - [ ] `GP2` - `Right` - Wired Fight Pad Pro (P+)
 - [ ] `GP3` - `Down` - Wired Fight Pad Pro (Leverless)
