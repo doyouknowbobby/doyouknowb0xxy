@@ -85,21 +85,38 @@ int main() {
     // Not plugged through USB =>  Joybus
     if (!gpio_get(USB_POWER_PIN)) {
         stateLabel__forceJoybusEntry:
-
-        if ((!gpio_get(7)) || (!gpio_get(2))) { // 10-GP7 OR 4-GP2 : F1 / P+
+        
+        // 10 - GP7 - MY : F1 / P+
+        // 4 - GP2 : F1 / P+
+        if ((!gpio_get(7))) { 
             CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
                 return DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
 
-        if (!gpio_get(6)) { // 9-GP6 : F1 / ultimate
+        // ? - GP1 - Up2 : F1 / Ultimate Macro
+        if ((!gpio_get(1))) { 
+            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+                return DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion());
+            });
+        }
+            
+        // 9 - GP6 - MX : F1 / Ultimate
+        if (!gpio_get(6)) {
             CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
                 return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
+
+        // 9 - GP15 - CDown : F1 / Melee
+        if (!gpio_get(15)) { // 9-GP6 : F1 / ultimate
+            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+                return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
+            });
+        }
         
-        // Else: F1 / Melee
-        CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
+        // No button: F1 / Ultimate
+        CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
     }
 
     // Else:
@@ -160,7 +177,7 @@ int main() {
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // ? - GP1 - up2 : F1 / ultimate_macro / adapter
+    // ? - GP1 - Up2 : F1 / ultimate_macro / adapter
     if (!gpio_get(1)) USBConfigurations::GccToUsbAdapter::enterMode([](){
         USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));
         
