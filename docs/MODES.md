@@ -42,6 +42,14 @@ See dedicated [README](PROGRAMMING.md#runtime-button-remapping).
 
 There are several modes that can be used either in USB modes (pretending to be a GameCube controller plugged int a USB Adapter), and Joybus mode (plugged in drectly with a GameCube compatible cable to a compatible console or physical USB Adapter).
 
+### Ultimate _Macro_
+
+- `GP1` (by default, `Up2`) => GCN (Ultimate) Joybus mode.
+- `GP1` (by default, `Up2`) => GCN (Ultimate) USB adapter mode.
+
+![GCN + Ultimate](../img/modes/gcn_ultimate_maacro.png)
+![GCN + Ultimate (mod)](../img/modes/gcn_ultimate_macro_mod.png)
+
 ### Ultimate 
 
 - `GP6` (by default, `MX`) => GCN (Ultimate) Joybus mode.
@@ -52,7 +60,7 @@ There are several modes that can be used either in USB modes (pretending to be a
 
 ### Melee
 - `No button` => GCN (Melee) Joybus mode.
-- `GP12` (by default, `CUp`) => GCN (Melee) USB adapter mode.
+- `GP15` (by default, `CDown`) => GCN (Melee) USB adapter mode.
   
 ![GCN + Melee](../img/modes/gcn_melee.png)
 ![GCN + Melee (mod)](../img/modes/gcn_melee_mod.png)
