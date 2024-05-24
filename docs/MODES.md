@@ -48,22 +48,22 @@ There are several modes that can be used either in USB modes (pretending to be a
 - `GP6` (by default, `MX`) => GCN (Ultimate) Joybus mode.
 - `GP6` (by default, `MX`) => GCN (Ultimate) USB adapter mode.
 
-![GCN Ultimate](../img/modes/gcn_ultimate.png)
-![GCN Ultimate (mod)](../img/modes/gcn_ultimate_mod.png)
+![GCN + Ultimate](../img/modes/gcn_ultimate.png)
+![GCN + Ultimate (mod)](../img/modes/gcn_ultimate_mod.png)
 
 ### Melee
 - `No button` => GCN (Melee) Joybus mode.
 - `GP12` (by default, `CUp`) => GCN (Melee) USB adapter mode.
   
-![GCN Melee](../img/modes/gcn_melee.png)
-![GCN Melee (mod)](../img/modes/gcn_melee_mod.png)
+![GCN + Melee](../img/modes/gcn_melee.png)
+![GCN + Melee (mod)](../img/modes/gcn_melee_mod.png)
 
 ### P+
 - `GP2` / `GP7` (by default, `Right` / `MY`) => GCN (P+) Joybus mode.
 - `GP7` (by default, `MY`) => GCN (P+) USB adapter mode.
 
-![GCN Plus](../img/modes/gcn_plus.png)
-![GCN Plus (mod)](../img/modes/gcn_plus_mod.png)
+![GCN + Plus](../img/modes/gcn_plus.png)
+![GCN + Plus (mod)](../img/modes/gcn_plus_mod.png)
 
 ## USB only Modes
 
@@ -162,8 +162,8 @@ With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are re
 
 - `GP2` (by default, `Right`) => Wired Fight Pad Pro with P+ logic (P+ DAC algorithm + Wired Fight Pad Pro USB configuration).
 
-![WFPP + Melee](../img/modes/wfpp_plus.png)
-![WFPP + Melee (mod)](../img/modes/wfpp_plus_mod.png)
+![WFPP + Plus](../img/modes/wfpp_plus.png)
+![WFPP + Plus (mod)](../img/modes/wfpp_plus_mod.png)
 
 ### PC Controllers
 
@@ -177,6 +177,15 @@ With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are re
 
 - `GP22` (by default, `Y`) resp. => HID controller with Ult logic.
 
+![WFPP + Ultimate](../img/modes/hid_ultimate.png)
+![WFPP + Ultimate (mod)](../img/modes/hid_ultimate_mod.png)
+
 - `GP21` (by default, `X`) resp. => HID controller with Melee logic.
 
+![WFPP + Melee](../img/modes/hid_melee.png)
+![WFPP + Melee (mod)](../img/modes/hid_melee_mod.png)
+
 - `GP10` (by default, `LS`) resp. => HID controller with P+ logic.
+
+![WFPP + Plus](../img/modes/hid_plus.png)
+![WFPP + Plus (mod)](../img/modes/hid_plus_mod.png)
