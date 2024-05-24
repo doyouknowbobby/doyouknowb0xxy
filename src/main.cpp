@@ -56,7 +56,7 @@ int main() {
     #endif
     ;
 
-    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 2, 1, keyboardPin }; // DO NOT USE PIN GP15
+    std::vector<uint8_t> modePins = { 22, 21, 20, 17, 16, 15, 14, 13, 7, 6, 5, 4, 2, 1, keyboardPin }; // DO NOT USE PIN GP15
 
     for (uint8_t modePin : modePins) {
         gpio_init(modePin);
@@ -114,8 +114,8 @@ int main() {
         DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
     });
     
-    // ? - GP12 - CUp - F1 / melee / adapter
-    if (!gpio_get(12)) USBConfigurations::GccToUsbAdapter::enterMode(
+    // ? - GP15 - CDown - F1 / melee / adapter
+    if (!gpio_get(15)) USBConfigurations::GccToUsbAdapter::enterMode(
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));},
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));}
     );
