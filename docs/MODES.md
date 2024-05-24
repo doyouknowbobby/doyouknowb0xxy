@@ -144,6 +144,18 @@ With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are re
 
 - `GP22` (by default, `Y`) resp. => HID controller with Ult logic.
 
+
+![WFPP + Melee](../img/modes/hid_ultimate.png)
+![WFPP + Melee (mod)](../img/modes/hid_ultimate_mod.png)
+
+
 - `GP21` (by default, `X`) resp. => HID controller with Melee logic.
 
+
+![WFPP + Melee](../img/modes/hid_melee.png)
+![WFPP + Melee (mod)](../img/modes/hid_melee_mod.png)
+
 - `GP10` (by default, `LS`) resp. => HID controller with P+ logic.
+
+![WFPP + Melee](../img/modes/hid_plus.png)
+![WFPP + Melee (mod)](../img/modes/hid_plus_mod.png)
