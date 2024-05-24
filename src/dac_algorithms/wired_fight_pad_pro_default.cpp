@@ -59,5 +59,65 @@ void actuateWFPPReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     };
 }
 
+// Map face and shoulder buttons to top two rows on right side. We're a fightstick now.
+// Use up2 for up to appease WASD players.
+// Use MY for up to appease Hitbox players.
+// MX and A are Plus and Minus.
+// L is a modifier: L+Start         = Photo, L+Left/Right/Up/Down = Dpad left/right/up/down
+void actuateLeverlessReport (GpioToButtonSets::F1::ButtonSet buttonSet) {
+
+    // Modifier button is L
+    bool mod = buttonSet.l;
+
+    // up -> ZR (you can always have too many ups)
+    bool zr = buttonSet.up;
+
+    // up2 -> up
+    // MY -> up (you can never have too many ups)
+    buttonSet.up = (buttonSet.up2 || buttonSet.my);
+
+    bool left = buttonSet.left && !(mod);
+    bool right = buttonSet.right && !(mod);
+    bool up = buttonSet.up && !(mod);
+    bool down = buttonSet.down && !(mod);
+
+    // Left stick + Modifer button -> D-Pad
+    bool dLeft = buttonSet.left && mod;
+    bool dRight = buttonSet.right && mod;
+    bool dUp = buttonSet.up && mod;
+    bool dDown = buttonSet.down && mod;
+
+    // Start +/- Modifier button -> Home / Photo
+    bool home = buttonSet.start && (!mod);
+    bool photo = buttonSet.start && mod;
+
+    // MX / A -> Minus and Plus
+    bool minus = buttonSet.mx;
+    bool plus = buttonSet.a;
+
+    USBConfigurations::WiredFightPadPro::hidReport = {
+        .y=buttonSet.r,         // R -> Y
+        .b=buttonSet.b,         // B -> B
+        .a=buttonSet.x,         // X -> A
+        .x=buttonSet.y,         // Y -> X
+        .l=buttonSet.ls,        // LS -> L
+        .r=buttonSet.ms,        // MS -> R
+        .zl=buttonSet.z,        // Z -> ZL
+        .zr=zr,                 // Up -> ZR
+        .minus=minus,           // MX -> -
+        .plus=plus,             // A -> +
+        .pad=0,
+        .home=home,             // Start -> Home
+        .photo=photo,           // Start + Modifier button -> Photo
+        .pad2=0,
+        .hat=hatFromDpadValues(dLeft, dRight, dUp, dDown),
+        .xStick=(uint8_t)(left && right ? 128 : left ? 48 : right ? 208 : 128), // Neutral SOCD 
+        .yStick=(uint8_t)(up && down ? 48 : down ? 208 : up ? 48 : 128), // Up overrides down
+        .cxStick=(uint8_t)(buttonSet.cLeft && buttonSet.cRight ? 128 : buttonSet.cLeft ? 48 : buttonSet.cRight ? 208 : 128), // Neutral SOCD
+        .cyStick=(uint8_t)(buttonSet.cUp && buttonSet.cDown ? 48 : buttonSet.cDown ? 208 : buttonSet.cUp ? 48 : 128), // Up overrides down
+        .pad3=0
+    };
+}
+
 }
 }

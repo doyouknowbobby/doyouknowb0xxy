@@ -19,6 +19,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] `Nothing Pressed` - XInput (Leverless Fightstick)
 - [ ] `GP0` - `Start` - 8KRO Keyboard
 - [ ] `GP2` - `Right` - Wired Fight Pad Pro (P+)
+- [ ] `GP3` - `Down` Wired Fight Pad Pro (Leverless Fightstick)
 - [ ] `GP4` - `Left` - Wired Fight Pad Pro (Wired Fight Pad Pro)
 - [ ] `GP5` - `L` - Wired Fight Pad Pro (Melee)
 - [ ] `GP6` - `MX` - Ultimate (Adapter) mode
