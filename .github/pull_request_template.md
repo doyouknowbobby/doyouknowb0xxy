@@ -12,14 +12,14 @@ Remove DAC Algorithms -> ColecoVision
 Check the boxes for any mode that is affected by your changes. Make sure to note if these will apply to future modes using a certain DAC algorithm, Communications Protocol, or Button Set.
 #### Console
 - [ ] `No button` - Melee (Joybus) mode
-- [ ] `GP1` - `Up2` - Ultimate Macro (Adapter) mode
+- [ ] `GP1` - `Up2` - Ultimate _Macro_ (Joybus) mode
 - [ ] `GP2` - `Right` P+ (Joybus) mode
 - [ ] `GP6` - `MX` - Ultimate (Joybus) mode
 - [ ] `GP7` - `MY` - P+ (Joybus) mode
 #### USB
 - [ ] `No button` - XInput (Leverless Fightstick)
 - [X] `GP0` - `Start` - 8KRO Keyboard
-- [ ] `GP1` - `Up2` - Ultimate Macro (Adapter) mode
+- [ ] `GP1` - `Up2` - Ultimate _Macro_ (Adapter) mode
 - [ ] `GP2` - `Right` - Wired Fight Pad Pro (P+)
 - [ ] `GP3` - `Down` Wired Fight Pad Pro (Leverless Fightstick)
 - [ ] `GP4` - `Left` - Wired Fight Pad Pro (Wired Fight Pad Pro)
@@ -27,7 +27,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] `GP6` - `MX` - Ultimate (Adapter) mode
 - [ ] `GP7` - `MY` - P+ (Adapter) mode
 - [ ] `GP12` - `CUp` - **OPEN**
-- [ ] `GP13` - `CLeft` - XInput (Xbox360 Controller Melee)
+- [ ] `GP13` - `CLeft` - XInput (Melee)
 - [ ] `GP14` - `A` - XInput (Xbox360 Controller)
 - [ ] `GP15` - `CDown` - Melee (Adapter) mode
 - [ ] `GP16` - `CRight` - `BOOTSEL` firmware update
