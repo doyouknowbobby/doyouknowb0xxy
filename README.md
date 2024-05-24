@@ -90,8 +90,8 @@ There are several things on my roadmap I have yet to implement, in no particular
     * ~Add XInput + Melee layout image.~
     * Add PS4 button layout images (through Brooks Adapter + XInput).
 * Implement `Up2` button across **ALL** modes.
-* Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.
-    * Change mod button and mapping as necessary.
+* ~Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.~
+    * ~Change mod button and mapping as necessary.~
     * ~Add WFPP + Leverless layout image.~
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
 * Refactor and implement all SOCD resolutions on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
@@ -111,7 +111,7 @@ There are several things on my roadmap I have yet to implement, in no particular
 <summary>Platform Fighter Branch</summary>
 
 * Add all relevant SOCD resolutions for all Melee/P+/Ultimate modes.
-* Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
+* ~Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.~
     * Change default mode in GCN & USB
     * ~Add GCN + Ultimate "Macro" button layout image~
 * Add WFPP + Ultimate DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
