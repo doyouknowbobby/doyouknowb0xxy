@@ -47,7 +47,7 @@ There are several modes that can be used either in USB modes (pretending to be a
 - `GP1` (by default, `Up2`) => GCN (Ultimate) Joybus mode.
 - `GP1` (by default, `Up2`) => GCN (Ultimate) USB adapter mode.
 
-![GCN + Ultimate](../img/modes/gcn_ultimate_maacro.png)
+![GCN + Ultimate](../img/modes/gcn_ultimate_macro.png)
 ![GCN + Ultimate (mod)](../img/modes/gcn_ultimate_macro_mod.png)
 
 ### Ultimate 
