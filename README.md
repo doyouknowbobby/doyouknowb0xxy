@@ -53,8 +53,9 @@ Hold a specified button while plugging the controller in, and that mode will be 
 - Playing Ultimate on Switch or PC (USB) => Ultimate + Adapter (`MX`) or Ultimate + Macro (`Up2`)
 - Playing other games on Switch => WFPP + WFPP (`Left`)
 - Playing other games on PC => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or 8KeysSet + Keyboard (`Start`)
+- Playing other games on PC with DirectInput => WFPP + WFPP (`Left`) or WFPP + Leverless (`Down`)
 - Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or XInput + Melee (`CLeft`)
-- Playing other games on PlayStation (requires Brooks Wingman XE) =>  XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or WFPP + WFPP (`Left`)
+- Playing other games on PlayStation (requires Brooks Wingman XE) =>  XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or WFPP + WFPP (`Left`) or WFPP + Leverless (`Down`)
 - Playing (non-Smash) platform fighters on Xbox or PC => XInput + Melee (`CLeft`)
 - Playing Melee/P+ on PC on the same setup as someone using a Gamecube controller and therefore an adapter => HID + Melee (`X`) or HID + P+ (`LS`) & configure the HID
 
@@ -91,7 +92,7 @@ There are several things on my roadmap I have yet to implement, in no particular
     * Add PS4 button layout images (through Brooks Adapter + XInput).
 * Implement `Up2` button across **ALL** modes.
 * ~Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.~
-    * ~Change mod button and mapping as necessary.~
+    * Change mod button and mapping as necessary.
     * ~Add WFPP + Leverless layout image.~
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
 * Refactor and implement all SOCD resolutions on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
@@ -103,8 +104,6 @@ There are several things on my roadmap I have yet to implement, in no particular
 <summary>Fightstick Branch</summary>
 
 * Add all relevant SOCD resolutions for all leverless modes.
-
-</details>
 
 <details>
 
