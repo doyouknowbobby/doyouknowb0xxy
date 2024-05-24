@@ -76,19 +76,18 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool dUp = buttonSet.up && mod;
     bool dDown = buttonSet.down && mod;
 
-    // R +/- Modifier button -> Home / Photo
+    // R / R + Modifier button -> R / Home
     bool r = buttonSet.r && (!mod);
     bool home = buttonSet.r && mod;
 
-    // MX / A / MX + Modifier Button -> LS Press / RS Press / Back
-    bool l3 = buttonSet.mx && (!mod);
-    bool r3 = buttonSet.a;
+    // B / B + Modifier Button -> B / Back
     bool back = buttonSet.b && mod;
+    bool b = buttonSet.b && !(mod);
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
-    xInputReport.rightStickPress = r3;
-    xInputReport.leftStickPress = l3;
+    xInputReport.rightStickPress = buttonSet.a;
+    xInputReport.leftStickPress = buttonSet.mx;
     xInputReport.back = back;
     xInputReport.start = buttonSet.start;
     xInputReport.dRight = dRight;
@@ -99,7 +98,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.zr = zr;
     xInputReport.home = home;
     xInputReport.pad1 = 0;
-    xInputReport.a = buttonSet.b;
+    xInputReport.a = b;
     xInputReport.b = buttonSet.x;
     xInputReport.x = r;
     xInputReport.y = buttonSet.y;
