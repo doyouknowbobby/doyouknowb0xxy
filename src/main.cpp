@@ -180,6 +180,7 @@ int main() {
     // ? - GP1 - Up2 : F1 / ultimate_macro / adapter
     if (!gpio_get(1)) USBConfigurations::GccToUsbAdapter::enterMode([](){
         USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCMacroReport(GpioToButtonSets::F1::defaultConversion()));
+    });
         
     // ? - GP3 - Down: F1 / wired_fight_pad_pro_leverless / wired_fight_pad_pro
     if (!gpio_get(3)) USBConfigurations::WiredFightPadPro::enterMode([](){
