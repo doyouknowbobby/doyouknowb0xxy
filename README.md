@@ -49,7 +49,7 @@ Hold a specified button while plugging the controller in, and that mode will be 
 - Updating Firmware (USB) => `BOOTSEL` (`CRight`)
 - Runtime remapping mode => (`Up`)
 - Playing Melee or. P+ on **console** => Melee + Joybus (`no button`) or P+ + Joybus (`MY`)
-- Playing Melee or P+ on PC (USB) => Melee + Adapter (`CUp`) or P+ + Adapter (`MY`)
+- Playing Melee or P+ on PC (USB) => Melee + Adapter (`CDown`) or P+ + Adapter (`MY`)
 - Playing Ultimate on Switch or PC (USB) => Ultimate + Adapter (`MX`) or Ultimate + Macro (`Up2`)
 - Playing other games on Switch => WFPP + WFPP (`Left`)
 - Playing other games on PC => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or 8KeysSet + Keyboard (`Start`)
