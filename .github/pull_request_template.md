@@ -30,7 +30,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] `GP12` - `CUp` - **OPEN**
 - [ ] `GP13` - `CLeft` - XInput (Melee)
 - [ ] `GP14` - `A` - XInput (Xbox360 Controller)
-- [ ] `GP15` - `CDown` - Melee (GCN Adapter) mode
+- [ ] `GP15` - `CDown` - Melee (GCN Adapter)
 - [ ] `GP16` - `CRight` - `BOOTSEL` Firmware Update
 - [ ] `GP17` - `Up` - Runtime Remapping
 - [ ] `GP18` - `MS` - **OPEN**
