@@ -1,6 +1,6 @@
 # Modes
 
-As of this release, 13 modes are built-in. There are two additional specialized programming modes.
+As of this release, 15 modes are built-in. There are two additional specialized programming modes.
 
 ![Modes](../img/modes/modes.png)
 
@@ -8,20 +8,21 @@ As of this release, 13 modes are built-in. There are two additional specialized 
 
 0. [BOOTSEL](#bootsel)
 1. [REMAP](#run-time-remapping)
-2. [GCN (Ultimate)](#ultimate)
-3. [GCN (Melee)](#melee)
-4. [GCN (P+)](#p)
-5. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
-6. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
-7. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
-8. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
-9. [WFPP (Leverless)](#wired-fight-pad-pro-leverless-fightstick)
-10. [WFPP (Melee)](#wired-fight-pad-pro-melee)
-11. [WFPP (P+)](#wired-fight-pad-pro-p)
-12. [8KRO Keyboard](#8kro-keyboard)
-13. [HID (Ultimate)](#hid-controllers)
-14. [HID (Melee)](#hid-controllers)
-15. [HID (P+)](#hid-controllers)
+3. [GCN (Ultimate Macro)](#ultimate-macro)
+3. [GCN (Ultimate)](#ultimate)
+4. [GCN (Melee)](#melee)
+5. [GCN (P+)](#p)
+6. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
+7. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
+8. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
+9. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
+10. [WFPP (Leverless)](#wired-fight-pad-pro-leverless-fightstick)
+11. [WFPP (Melee)](#wired-fight-pad-pro-melee)
+12. [WFPP (P+)](#wired-fight-pad-pro-p)
+13. [8KRO Keyboard](#8kro-keyboard)
+14. [HID (Ultimate)](#hid-controllers)
+15. [HID (Melee)](#hid-controllers)
+16. [HID (P+)](#hid-controllers)
 
 ## Programming Modes
 
@@ -43,6 +44,14 @@ See dedicated [README](PROGRAMMING.md#runtime-button-remapping).
 
 There are several modes that can be used either in USB modes (pretending to be a GameCube controller plugged int a USB Adapter), and Joybus mode (plugged in drectly with a GameCube compatible cable to a compatible console or physical USB Adapter).
 
+### Ultimate _Macro_
+
+- `GP1` (by default, `Up2`) => GCN (Ultimate) Joybus mode.
+- `GP1` (by default, `Up2`) => GCN (Ultimate) USB adapter mode.
+
+![GCN + Ultimate](../img/modes/gcn_ultimate_macro.png)
+![GCN + Ultimate (mod)](../img/modes/gcn_ultimate_macro_mod.png)
+
 ### Ultimate 
 
 - `GP6` (by default, `MX`) => GCN (Ultimate) Joybus mode.
@@ -53,7 +62,7 @@ There are several modes that can be used either in USB modes (pretending to be a
 
 ### Melee
 - `No button` => GCN (Melee) Joybus mode.
-- `GP12` (by default, `CUp`) => GCN (Melee) USB adapter mode.
+- `GP15` (by default, `CDown`) => GCN (Melee) USB adapter mode.
   
 ![GCN + Melee](../img/modes/gcn_melee.png)
 ![GCN + Melee (mod)](../img/modes/gcn_melee_mod.png)

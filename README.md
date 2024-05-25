@@ -48,10 +48,10 @@ Hold a specified button while plugging the controller in, and that mode will be 
 
 - Updating Firmware (USB) => `BOOTSEL` (`CRight`)
 - Runtime remapping mode => (`Up`)
-- Playing Melee or P+ on **console** => Melee + Joybus (`no button`) or P+ + Joybus (`MY`)
-- Playing Melee or P+ on PC (USB) => Melee + Adapter (`CUp`) or P+ + Adapter (`MY`)
-- Playing Ultimate on Switch or PC (USB) => Ultimate + Adapter (`MX`)
-- Playing other games on Switch => WFPP + WFPP (`Left`) or WFPP + Leverless (`Down`)
+- Playing Melee or. P+ on **console** => Melee + Joybus (`no button`) or P+ + Joybus (`MY`)
+- Playing Melee or P+ on PC (USB) => Melee + Adapter (`CDown`) or P+ + Adapter (`MY`)
+- Playing Ultimate on Switch or PC (USB) => Ultimate + Adapter (`MX`) or Ultimate + Macro (`Up2`)
+- Playing other games on Switch => WFPP + WFPP (`Left`)
 - Playing other games on PC => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or 8KeysSet + Keyboard (`Start`)
 - Playing other games on PC with DirectInput => WFPP + WFPP (`Left`) or WFPP + Leverless (`Down`)
 - Playing other games on Xbox (requires Brooks Wingman XB) => XInput + Leverless (`no button`) or XInput + Xbox360 (`A`) or XInput + Melee (`CLeft`)
@@ -91,8 +91,8 @@ There are several things on my roadmap I have yet to implement, in no particular
     * ~Add XInput + Melee layout image.~
     * Add PS4 button layout images (through Brooks Adapter + XInput).
 * Implement `Up2` button across **ALL** modes.
-* ~~Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.~~
-    * ~Change mod button and mapping as necessary.~
+* ~Add Nintendo Switch WFPP + Leverless DAC Algorithm/mode for better fighting game compatibility on Switch, a DInput option for PS4/PC compatibility.~
+    * Change mod button and mapping as necessary.
     * ~Add WFPP + Leverless layout image.~
     * Add PS4 button layout images. (through Brooks Adapter + DInput)
 * Refactor and implement all SOCD resolutions on all Melee/P+/Leverless modes (not just Ultimate) when compiling.
@@ -110,7 +110,7 @@ There are several things on my roadmap I have yet to implement, in no particular
 <summary>Platform Fighter Branch</summary>
 
 * Add all relevant SOCD resolutions for all Melee/P+/Ultimate modes.
-* Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
+* ~Add GCN + Ultimate "Macro" DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.~
     * Change default mode in GCN & USB
     * ~Add GCN + Ultimate "Macro" button layout image~
 * Add WFPP + Ultimate DAC Algorithm/mode with `A`+`B` smash attack macro and `X`+`Y` shorthop macro directly mapped.
