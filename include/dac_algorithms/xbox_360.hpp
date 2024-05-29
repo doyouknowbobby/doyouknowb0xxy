@@ -12,6 +12,8 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet);
 
 void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet);
 
+void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet);
+
 }
 }
 #endif
