@@ -116,7 +116,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
 };
 
 // Basic-ass DAC Algorithm for Mutliversus. Copied from actuateXbox360Report() so 
-// it doesn't have movement modifiers or shield buttons yet.
+// it doesn't have movement modifiers or proper SOCD yet.
 void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     // Modifier button is L
     bool mod = buttonSet.l;
@@ -147,24 +147,25 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
-    xInputReport.rightStickPress = 0;						// Inaccessible
-    xInputReport.leftStickPress = 0;						// Inaccessible
+    xInputReport.rightStickPress = 0;                       // Inaccessible
+    xInputReport.leftStickPress = 0;                        // Inaccessible
     xInputReport.back = back;
     xInputReport.start = start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
     xInputReport.dUp = dUp;
-    xInputReport.zl = buttonSet.ls;							// LS = LB
+    xInputReport.zl = buttonSet.ls;                         // LS = LB
     xInputReport.zr = buttonSet.z;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;									// Inaccessible
+    xInputReport.pad1 = 0;                                  // Inaccessible
     xInputReport.a = buttonSet.a;
     xInputReport.b = b;
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
-    xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;		// MS = LT
+    xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
     xInputReport.rightTrigger = r ? 255 : 0;
+	// Neutral SOCD
     xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
     xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
     xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
