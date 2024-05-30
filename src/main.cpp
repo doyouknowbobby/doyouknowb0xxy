@@ -64,10 +64,10 @@ int main() {
         gpio_pull_up(modePin);
     }
 
-    // 21 - GP16 - BOOTSEL
+    // 21 - GP16 - CRight : BOOTSEL Firmware Update
     if (!gpio_get(16)) reset_usb_boot(0, 0);
 
-    // 22 - GP17 - Up : runtime remapping
+    // 22 - GP17 - Up : Runtime Remapping
     if (!gpio_get(17)) Other::enterRuntimeRemappingMode();
     
     gpio_init(gcDataPin);
@@ -82,27 +82,32 @@ int main() {
     
     /* Mode selection logic */
 
-    // Not plugged through USB =>  Joybus
+    // Not plugged through USB => Joybus
     if (!gpio_get(USB_POWER_PIN)) {
         stateLabel__forceJoybusEntry:
 
-        if ((!gpio_get(7)) || (!gpio_get(2))) { // 10 - GP7 - Right OR 4 - GP2 - MX : GCN + P+
-            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
-                return DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
-            });
-        }
-
-        if (!gpio_get(6)) { // 9 - GP6 - MY : GCN + Ultimate
-            CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
-                return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
-            });
-        }
+        // 10 - GP7 - Right OR 4 - GP2 - MX : GCN + P+
+        if ((!gpio_get(7)) || (!gpio_get(2))) CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+            return DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
+        });
+        
+        // 9 - GP6 - MY : GCN + Ultimate
+        if (!gpio_get(6)) CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+            return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
+        });
+        
+        // ? - GP15 - CDown : GCN + Melee
+        if (!gpio_get(15)) CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
+            return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
+        });
         
         // Default: GCN + Melee
-        CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
+        CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ 
+            return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); 
+        });
     }
 
-    // Else:
+    // Else plugged in through USB:
 
     // ? - GP12 - CUp : XInput + Multiversus
     if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
