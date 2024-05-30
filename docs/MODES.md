@@ -1,6 +1,6 @@
 # Modes
 
-As of this release, 14 modes are built-in. There are two additional specialized programming modes.
+As of this release, 15 modes are built-in. There are two additional specialized programming modes.
 
 ![Modes](../img/modes.png)
 
@@ -80,7 +80,7 @@ XInput can function as a leverless fightstick, offering a different default butt
 
 The face buttons are mapped directly to the first four buttons on the right hand, with the L/R triggers on the top two right most buttons, and L/R bumpers immediately underneath them.
 
-In this scheme you can only access cardinals and diagonals on the control sticks. `Start`, `MX` and the `Left Stick` have additional buttons mapped when combined with `L`.
+In this scheme you can only access cardinals and diagonals on the control sticks. `R`, `B` and the `Left Stick` have additional buttons mapped when combined with `L`.
 
 ![XInput + Leverless](../img/modes/xinput_leverless.png)
 ![XInput + Leverless (mod)](../img/modes/xinput_leverless_mod.png)
@@ -89,7 +89,7 @@ In this scheme you can only access cardinals and diagonals on the control sticks
 
 - `GP14` (by default, `A`) => XInput (Xbox360 DAC algorithm + Xbox360 USB configuration).
 
-In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick. `Start`, `B` and the `Left Stick` have additional buttons mapped when combined with `MS`.
+In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick. `R`, `B` and the `Left Stick` have additional buttons mapped when combined with `MS`.
 
 ![XInput + Xbox360](../img/modes/xinput_xbox360.png)
 ![XInput + Xbox360 (mod)](../img/modes/xinput_xbox360_mod.png)
@@ -107,7 +107,7 @@ With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R`
 
 - `GP12` (by default, `CUp`) => XInput (Multiversus DAC algorithm + Xbox360 USB configuration).
 
-With the Multiversus F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R` and `Z` are respectively mapped to LT, RT and ZR (aka RB). ZR (aka LB), Back (aka View), Home, LS Press, and RS Press are inaccessible.
+With the Multiversus F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `LS`, `MS`, `R` and `Z` are respectively mapped to ZL (aka LB), LT, RT and ZR (aka RB). `R`, `B`, `MX`, `MY`, and the `Left Stick` have additional buttons mapped when combined with `L`.
 
 ![XInput + Melee](../img/modes/xinput_multiversus.png)
 ![XInput + Melee (mod)](../img/modes/xinput_multiversus_mod.png)
