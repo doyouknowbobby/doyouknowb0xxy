@@ -98,7 +98,7 @@ In Xbox360 mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only
 
 - `GP13` (by default, `CLeft`) => XInput (Melee DAC algorithm + Xbox360 USB configuration).
 
-With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R` and `Z` are respectively mapped to LT, RT and ZR (aka RB). ZR (aka LB), Back (aka View), Home, LS Press, and RS Press are inaccessible.
+With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R` and `Z` are respectively mapped to LT, RT and ZR (aka RB). ZR (aka LB), Back (aka View), Home, LS Press, and RS Press are inaccessible. The `C Stick` has additional buttons mapped when combined with `Up2`.
 
 ![XInput + Melee](../img/modes/xinput_melee.png)
 ![XInput + Melee (mod)](../img/modes/xinput_melee_mod.png)
@@ -122,7 +122,7 @@ This is a "Wired Fight Pad Pro":
 
 - `GP4` (by default, `Left`) => Wired Fight Pad Pro with dedicated logic (Wired Fight Pad Pro DAC algorithm + Wired Fight Pad Pro USB configuration).
 
-In dedicated mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick.
+In dedicated mode, `MX`/`MY` and `LS`/`MS` are repurposed. This means you can only access cardinals and diagonals on the control stick. *`Start`, `Up` and the `Left Stick` have additional buttons mapped when combined with `MS`.*
 
 ![WFPP + WFPP](../img/modes/wfpp_wfpp.png)
 ![WFPP + WFPP (mod)](../img/modes/wfpp_wfpp_mod.png)
@@ -135,7 +135,7 @@ WFPP can also function as a leverless fightstick, offering a different default b
 
 The face buttons are mapped directly to the first four buttons on the right hand, with the L/R triggers on the top two right most buttons, and ZL/ZR shoulders immediately underneath them.
 
-In this scheme you can only access cardinals and diagonals on the control sticks. *`Start`, `MX` and the control stick have additional buttons mapped when combined with `L`.*
+In this scheme you can only access cardinals and diagonals on the control sticks. *`Start`, `MY` and the `Left Stick` have additional buttons mapped when combined with `L`.*
 
 ![WFPP + Leverless](../img/modes/wfpp_leverless.png)
 ![WFPP + Leverless (mod)](../img/modes/wfpp_leverless_mod.png)
@@ -144,7 +144,7 @@ In this scheme you can only access cardinals and diagonals on the control sticks
 
 - `GP5` (by default, `L`) => Wired Fight Pad Pro with Melee logic (Melee DAC algorithm + Wired Fight Pad Pro USB configuration).
 
-With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are respectively mapped to ZL, ZR and R. That means -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick).
+With the Melee F1 DAC algorithm, `Start` is mapped to +. `L`, `R` and `Z` are respectively mapped to ZL, ZR and R. That means -, Home, L and Photo are inaccessible. The purpose of this mode is to allow playing on a PC setup with other people that are using vanilla Gamecube controllers through an adapter, as Slippi can't handle multiple adapters at once. There may be slight analog discrepancies occuring as a result of using the Standard Controller mode (max 1 tick). The `C Stick` has additional buttons mapped when combined with `Up2`.
 
 ![WFPP + Melee](../img/modes/wfpp_melee.png)
 ![WFPP + Melee (mod)](../img/modes/wfpp_melee_mod.png)
