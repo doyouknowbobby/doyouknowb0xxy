@@ -128,7 +128,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool left = buttonSet.left && !(mod);
     bool right = buttonSet.right && !(mod);
     bool up = buttonSet.up && !(mod);
-    bool down = buttonSet.down && !!(mod);
+    bool down = buttonSet.down && !(mod);
 
     // Left stick + Modifer button -> D-Pad
     bool dLeft = buttonSet.left && mod;
@@ -139,7 +139,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     // Start / B + Modifier Button -> Home / View
     bool home = buttonSet.start && mod;        // Xbox
     bool start = buttonSet.start && !(mod);    // Menu
-    bool back = buttonSet.b && && mod;         // View
+    bool back = buttonSet.b && mod;            // View
     bool b = buttonSet.b && !(mod);            // B
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
