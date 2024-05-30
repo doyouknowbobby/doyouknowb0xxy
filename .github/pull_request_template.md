@@ -17,7 +17,7 @@ Check the boxes for any mode that is affected by your changes. Make sure to note
 - [ ] `GP7` - `MY` - P+ (Joybus)
 - [ ] `GP15` - `CDown` - Melee (Joybus)
 #### USB
-- [ ] `Nothing Pressed` - XInput (Leverless Fightstick)
+- [ ] `No button` - XInput (Leverless Fightstick)
 - [ ] `GP0` - `Start` - 8KRO Keyboard
 - [ ] `GP2` - `Right` - Nintendo Switch Wired Fight Pad Pro (P+)
 - [ ] `GP3` - `Down` Nintendo Switch Wired Fight Pad Pro (Leverless Fightstick)
