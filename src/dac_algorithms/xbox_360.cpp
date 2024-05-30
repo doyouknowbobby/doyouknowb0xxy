@@ -24,7 +24,7 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
 
     // R / B + Modifier Button -> Home / View
     bool home = buttonSet.r && mod;         // Home
-    bool r = buttonSet.r && !(mod);			// R
+    bool r = buttonSet.r && !(mod);         // R
     bool back = buttonSet.b && mod;         // View
     bool b = buttonSet.b && !(mod);         // B
 
@@ -138,7 +138,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
 
     // Start / B + Modifier Button -> Home / View
     bool home = buttonSet.r && mod;         // Home
-    bool r = buttonSet.r && !(mod);			// R
+    bool r = buttonSet.r && !(mod);         // R
     bool back = buttonSet.b && mod;         // View
     bool b = buttonSet.b && !(mod);         // B
 
@@ -165,7 +165,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
     xInputReport.rightTrigger = r ? 255 : 0;
-	// Neutral SOCD
+    // Neutral SOCD
     xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
     xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
     xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
