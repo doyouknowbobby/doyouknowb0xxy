@@ -1,8 +1,8 @@
 # Modes
 
-As of this release, 13 modes are built-in. There are two additional specialized programming modes.
+As of this release, 14 modes are built-in. There are two additional specialized programming modes.
 
-![Modes](../img/modes/modes.png)
+![Modes](../img/modes.png)
 
 ## TOC
 
@@ -11,17 +11,18 @@ As of this release, 13 modes are built-in. There are two additional specialized 
 2. [GCN (Ultimate)](#ultimate)
 3. [GCN (Melee)](#melee)
 4. [GCN (P+)](#p)
-5. [Xbox360 (Leverless)](#xinput-leverless-fightstick)
-6. [Xbox360 (Dedicated)](#xinput-xbox360-controller)
-7. [Xbox360 (Melee)](#xinput-xbox360-controller-melee)
-8. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
-9. [WFPP (Leverless)](#wired-fight-pad-pro-leverless-fightstick)
-10. [WFPP (Melee)](#wired-fight-pad-pro-melee)
-11. [WFPP (P+)](#wired-fight-pad-pro-p)
-12. [8KRO Keyboard](#8kro-keyboard)
-13. [HID (Ultimate)](#hid-controllers)
-14. [HID (Melee)](#hid-controllers)
-15. [HID (P+)](#hid-controllers)
+5. [XInput (Leverless)](#xinput-leverless-fightstick)
+6. [XInput (Xbox 360)](#xinput-xbox360-controller)
+7. [XInput (Melee)](#xinput-xbox360-controller-melee)
+8. [XInput (Multiversus)](#xinput-xbox360-controller-multiversus)
+9. [WFPP (Dedicated)](#wired-fight-pad-pro-nintendo-switch-controller)
+10. [WFPP (Leverless)](#wired-fight-pad-pro-leverless-fightstick)
+11. [WFPP (Melee)](#wired-fight-pad-pro-melee)
+12. [WFPP (P+)](#wired-fight-pad-pro-p)
+13. [8KRO Keyboard](#8kro-keyboard)
+14. [HID (Ultimate)](#hid-controllers)
+15. [HID (Melee)](#hid-controllers)
+16. [HID (P+)](#hid-controllers)
 
 ## Programming Modes
 
@@ -101,6 +102,15 @@ With the Melee F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R`
 
 ![XInput + Melee](../img/modes/xinput_melee.png)
 ![XInput + Melee (mod)](../img/modes/xinput_melee_mod.png)
+
+#### XInput (Xbox360 Controller Multiversus)
+
+- `GP12` (by default, `CUp`) => XInput (Multiversus DAC algorithm + Xbox360 USB configuration).
+
+With the Multiversus F1 DAC algorithm, `Start` is mapped to Start (aka Menu). `L`, `R` and `Z` are respectively mapped to LT, RT and ZR (aka RB). ZR (aka LB), Back (aka View), Home, LS Press, and RS Press are inaccessible.
+
+![XInput + Melee](../img/modes/xinput_multiversus.png)
+![XInput + Melee (mod)](../img/modes/xinput_multiversus_mod.png)
 
 ### Nintendo Switch Controllers
 
