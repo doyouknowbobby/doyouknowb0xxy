@@ -10,7 +10,8 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
     // up2 -> up
     // up -> up (might as well)
     buttonSet.up = buttonSet.up || buttonSet.up2;
-    
+
+    // Raw Movement button presses.
     bool left = buttonSet.left && !(mod);
     bool right = buttonSet.right && !(mod);
     bool up = buttonSet.up && !(mod);
@@ -124,11 +125,20 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     // up2 -> up
     // up -> up (might as well)
     buttonSet.up = buttonSet.up || buttonSet.up2;
-    
+
+    // Raw movement on left stick.
     bool left = buttonSet.left && !(mod);
     bool right = buttonSet.right && !(mod);
     bool up = buttonSet.up && !(mod);
     bool down = buttonSet.down && !(mod);
+
+    // Resolve SOCD on left stick. (Neutral)
+    uint8_t lx_coord = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    uint8_t ly_coord = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    
+    // Resolve SOCD on right stick (Neutral).
+    uint8_t rx_coord = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    uint8_t ry_coord = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0
 
     // Left stick + Modifer button -> D-Pad
     bool dLeft = buttonSet.left && mod;
@@ -164,12 +174,16 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
-    xInputReport.rightTrigger = r ? 255 : 0;
-    // Neutral SOCD
-    xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
-    xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
-    xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-    xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+    xInputReport.rightTrigger = r ? 255 : 0
+    // xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    xInputReport.leftStickX = lx_coord;
+    // xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    xInputReport.leftStickY = ly_coord;
+    // xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    xInputReport.rightStickX = rx_coord;
+    // xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+    xInputReport.rightStickY = ry_coord;
+
 };
 
 
