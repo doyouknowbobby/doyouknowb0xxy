@@ -56,7 +56,7 @@ int main() {
     #endif
     ;
 
-    std::vector<uint8_t> modePins = { 22, 21, 20, 16, 17, 14, 13, 12, 7, 6, 5, 4, 3, 2, keyboardPin }; // DO NOT USE PIN GP15
+    std::vector<uint8_t> modePins = { 22, 21, 20, 17, 16, 15, 14, 13, 12, 7, 6, 5, 4, 3, 2, keyboardPin }; // DO NOT USE PIN GP15
 
     for (uint8_t modePin : modePins) {
         gpio_init(modePin);
@@ -86,91 +86,96 @@ int main() {
     if (!gpio_get(USB_POWER_PIN)) {
         stateLabel__forceJoybusEntry:
 
-        if ((!gpio_get(7)) || (!gpio_get(2))) { // 10-GP7 OR 4-GP2 : F1 / P+
+        if ((!gpio_get(7)) || (!gpio_get(2))) { // 10 - GP7 - Right OR 4 - GP2 - MX : GCN + P+
             CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
                 return DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
 
-        if (!gpio_get(6)) { // 9-GP6 : F1 / ultimate
+        if (!gpio_get(6)) { // 9 - GP6 - MY : GCN + Ultimate
             CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){
                 return DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion());
             });
         }
         
-        // Else: F1 / Melee
+        // Default: GCN + Melee
         CommunicationProtocols::Joybus::enterMode(gcDataPin, [](){ return DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()); });
     }
 
     // Else:
+
+    // ? - GP12 - CUp : XInput + Multiversus
+    if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
+        DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
+    });
     
-    // 17 - GP13 - CLeft - Melee / XInput
+    // 17 - GP13 - CLeft : XInput + Melee
     if (!gpio_get(13)) USBConfigurations::Xbox360::enterMode([](){
         USBConfigurations::Xbox360::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 19 - GP14 - A - Xbox360/Xbox360 (aka XInput)
+    // 19 - GP14 - A : XInput + Xbox360
     if (!gpio_get(14)) USBConfigurations::Xbox360::enterMode([](){
         DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
     });
-    
-    // ? - GP12 - CUp - F1 / melee / adapter
-    if (!gpio_get(12)) USBConfigurations::GccToUsbAdapter::enterMode(
+
+    // ? - GP15 - CDown : GCN + Melee
+    if (!gpio_get(15)) USBConfigurations::GccToUsbAdapter::enterMode(
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));},
         [](){USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));}
     );
 
-    // 27 - GP21 - X - Melee / HID
+    // 27 - GP21 - X : HID + Melee
     if (!gpio_get(21)) USBConfigurations::HidWithTriggers::enterMode([](){
         USBConfigurations::HidWithTriggers::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 29 - GP22 - Y - Ult / HID
+    // 29 - GP22 - Y : HID + Ultimate
     if (!gpio_get(22)) USBConfigurations::HidWithTriggers::enterMode([](){
         USBConfigurations::HidWithTriggers::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 26 - GP20 - LS - P+ / HID
+    // 26 - GP20 - LS : HID + P+
     if (!gpio_get(20)) USBConfigurations::HidWithTriggers::enterMode([](){
         USBConfigurations::HidWithTriggers::actuateReportFromGCState(DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 4 - GP2 - Right : F1 / P+ / WFPP
+    // 4 - GP2 - Right : Switch WFPP + P+
     if (!gpio_get(2)) USBConfigurations::WiredFightPadPro::enterMode([](){
         USBConfigurations::WiredFightPadPro::actuateReportFromGCState(DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 10 - GP7 - MY : F1 / P+ / adapter
+    // 10 - GP7 - MY : GCN + P+
     if (!gpio_get(7)) USBConfigurations::GccToUsbAdapter::enterMode([](){
         USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::ProjectPlusF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 9 - GP6 - MX : F1 / ultimate / adapter
+    // 9 - GP6 - MX : GCN + Ultimate
     if (!gpio_get(6)) USBConfigurations::GccToUsbAdapter::enterMode([](){
         USBConfigurations::GccToUsbAdapter::actuateReportFromGCState(DACAlgorithms::UltimateF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 7 - GP5 - L: F1 / melee / wired_fight_pad_pro
+    // 7 - GP5 - L: Switch WFPP + Melee
     if (!gpio_get(5)) USBConfigurations::WiredFightPadPro::enterMode([](){
         USBConfigurations::WiredFightPadPro::actuateReportFromGCState(DACAlgorithms::MeleeF1::getGCReport(GpioToButtonSets::F1::defaultConversion()));
     });
 
-    // 6 - GP4 - Left: F1 / wired_fight_pad_pro_default / wired_fight_pad_pro
+    // 6 - GP4 - Left: Switch  WFPP + WFPP
     if (!gpio_get(4)) USBConfigurations::WiredFightPadPro::enterMode([](){
         DACAlgorithms::WiredFightPadProDefault::actuateWFPPReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // ? - GP3 - Down: F1 / wired_fight_pad_pro_leverless / wired_fight_pad_pro
+    // ? - GP3 - Down: Switch WFPP + Leverless
     if (!gpio_get(3)) USBConfigurations::WiredFightPadPro::enterMode([](){
         DACAlgorithms::WiredFightPadProDefault::actuateLeverlessReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // 0 - 0 - Start: F1 / 8 keys set / 8KRO keyboard
+    // 0 - 0 - Start: 8 keys set / 8KRO keyboard
     if (!gpio_get(keyboardPin)) USBConfigurations::Keyboard8KRO::enterMode([](){
         DACAlgorithms::SetOf8Keys::actuate8KeysReport(GpioToButtonSets::F1::defaultConversion());
     });
 
-    // Default: Leverless/Xbox360 (aka XInput)
+    // Default: XInput + Leverless
     USBConfigurations::Xbox360::enterMode([](){
         DACAlgorithms::Xbox360::actuateLeverlessReport(GpioToButtonSets::F1::defaultConversion());
     });
