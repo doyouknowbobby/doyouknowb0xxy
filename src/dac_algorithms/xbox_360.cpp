@@ -22,18 +22,18 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool dUp = buttonSet.up && mod;
     bool dDown = buttonSet.down && mod;
 
-    // Start / B + Modifier Button -> Home / View
-    bool home = buttonSet.start && mod;        // Home
-    bool start = buttonSet.start && !(mod);    // Menu
-    bool back = buttonSet.b && mod;            // View
-    bool b = buttonSet.b && !(mod);            // B
+    // R / B + Modifier Button -> Home / View
+    bool home = buttonSet.r && mod;         // Home
+    bool r = buttonSet.r && !(mod);			// R
+    bool back = buttonSet.b && mod;         // View
+    bool b = buttonSet.b && !(mod);         // B
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
     xInputReport.rightStickPress = buttonSet.my;
     xInputReport.leftStickPress = buttonSet.mx;
     xInputReport.back = back;
-    xInputReport.start = start;
+    xInputReport.start = buttonSet.start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
@@ -41,13 +41,13 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.zl = buttonSet.ls;
     xInputReport.zr = buttonSet.z;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;
+    xInputReport.pad1 = 0;									// Inaccessible
     xInputReport.a = buttonSet.a;
     xInputReport.b = b;
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
-    xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
+    xInputReport.rightTrigger = r ? 255 : 0;
     xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
     xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
     xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
@@ -102,7 +102,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.zl = buttonSet.z;
     xInputReport.zr = zr;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;
+    xInputReport.pad1 = 0;									// Inaccessible
     xInputReport.a = b;
     xInputReport.b = buttonSet.x;
     xInputReport.x = r;
@@ -137,31 +137,34 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool dDown = buttonSet.down && mod;
 
     // Start / B + Modifier Button -> Home / View
-    bool home = buttonSet.start && mod;        // Xbox
-    bool start = buttonSet.start && !(mod);    // Menu
-    bool back = buttonSet.b && mod;            // View
-    bool b = buttonSet.b && !(mod);            // B
+    bool home = buttonSet.r && mod;         // Home
+    bool r = buttonSet.r && !(mod);			// R
+    bool back = buttonSet.b && mod;         // View
+    bool b = buttonSet.b && !(mod);         // B
+
+    // LS -> LB
+    // MS -> LT
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
-    xInputReport.rightStickPress = buttonSet.my;
-    xInputReport.leftStickPress = buttonSet.mx;
+    xInputReport.rightStickPress = 0;						// Inaccessible
+    xInputReport.leftStickPress = 0;						// Inaccessible
     xInputReport.back = back;
     xInputReport.start = start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
     xInputReport.dUp = dUp;
-    xInputReport.zl = buttonSet.ls;
+    xInputReport.zl = buttonSet.ls;							// LS = LB
     xInputReport.zr = buttonSet.z;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;
+    xInputReport.pad1 = 0;									// Inaccessible
     xInputReport.a = buttonSet.a;
     xInputReport.b = b;
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
-    xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
-    xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
+    xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;		// MS = LT
+    xInputReport.rightTrigger = r ? 255 : 0;
     xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
     xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
     xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
