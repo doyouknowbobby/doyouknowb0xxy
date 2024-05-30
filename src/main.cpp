@@ -106,7 +106,7 @@ int main() {
 
     // ? - GP12 - CUp : XInput + Multiversus
     if (!gpio_get(12)) USBConfigurations::Xbox360::enterMode([](){
-        DACAlgorithms::Xbox360::actuateXbox360Report(GpioToButtonSets::F1::defaultConversion());
+        DACAlgorithms::Xbox360::actuateMultiversusReport(GpioToButtonSets::F1::defaultConversion());
     });
     
     // 17 - GP13 - CLeft : XInput + Melee
