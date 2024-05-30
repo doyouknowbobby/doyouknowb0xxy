@@ -40,7 +40,7 @@ If you want to prevent this electrically, use Schottky diodes, or power VSYS wit
 
 Hold a specified button while plugging the controller in, and that mode will be selected until the controller is disconnected.
 
-![Image](img/modes/modes.png)
+![Image](img/modes.png)
 
 <details>
    
@@ -117,7 +117,11 @@ There are several things on my roadmap I have yet to implement, in no particular
     * Change default mode in USB, take priority over previous changes to default
     * Add WFPP + Ultimate button layout image
 * Add Multiversus algorithm/mode
+    * ~Initial~
+    * Refined
 * Add Rivals 2 algorithm/mode?
+    * Initial
+    * Refined
 
 </details>
 
