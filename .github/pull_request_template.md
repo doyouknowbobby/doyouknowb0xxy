@@ -11,22 +11,24 @@ Remove DAC Algorithms -> ColecoVision
 ### Affected Modes
 Check the boxes for any mode that is affected by your changes. Make sure to note if these will apply to future modes using a certain DAC algorithm, Communications Protocol, or Button Set.
 #### Console
-- [ ] `No button` - Melee (Joybus) mode
-- [ ] `GP2` - `Right` P+ (Joybus) mode
-- [ ] `GP6` - `MX` - Ultimate (Joybus) mode
-- [ ] `GP7` - `MY` - P+ (Joybus) mode
+- [ ] `No button` - Melee (Joybus)
+- [ ] `GP2` - `Right` P+ (Joybus)
+- [ ] `GP6` - `MX` - Ultimate (Joybus)
+- [ ] `GP7` - `MY` - P+ (Joybus)
+- [ ] `GP15` - `CDown` - Melee (Joybus)
 #### USB
-- [ ] `Nothing Pressed` - XInput (Leverless Fightstick)
+- [ ] `No button` - XInput (Leverless Fightstick)
 - [ ] `GP0` - `Start` - 8KRO Keyboard
-- [ ] `GP2` - `Right` - Wired Fight Pad Pro (P+)
-- [ ] `GP3` - `Down` Wired Fight Pad Pro (Leverless Fightstick)
-- [ ] `GP4` - `Left` - Wired Fight Pad Pro (Wired Fight Pad Pro)
-- [ ] `GP5` - `L` - Wired Fight Pad Pro (Melee)
-- [ ] `GP6` - `MX` - Ultimate (Adapter) mode
-- [ ] `GP7` - `MY` - P+ (Adapter) mode
-- [ ] `GP12` - `CUp` - Melee (Adapter) mode
+- [ ] `GP2` - `Right` - Nintendo Switch Wired Fight Pad Pro (P+)
+- [ ] `GP3` - `Down` Nintendo Switch Wired Fight Pad Pro (Leverless Fightstick)
+- [ ] `GP4` - `Left` - Nintendo Switch Wired Fight Pad Pro (Wired Fight Pad Pro)
+- [ ] `GP5` - `L` - Nintendo Switch Wired Fight Pad Pro (Melee)
+- [ ] `GP6` - `MX` - Ultimate (GCN Adapter)
+- [ ] `GP7` - `MY` - P+ (GCN Adapter)
+- [ ] `GP12` - `CUp` - XInput (Xbox360 Controller Multiversus)
 - [ ] `GP13` - `CLeft` - XInput (Xbox360 Controller Melee)
 - [ ] `GP14` - `A` - XInput (Xbox360 Controller)
+- [ ] `GP15` - `CDown` - Melee (GCN Adapter)
 - [ ] `GP16` - `CRight` - `BOOTSEL` firmware update
 - [ ] `GP17` - `Up` - Runtime Remapping
 - [ ] `GP20` - `LS` - HID Controller (P+)

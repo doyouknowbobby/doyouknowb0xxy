@@ -4,30 +4,37 @@ namespace DACAlgorithms {
 namespace Xbox360 {
 
 void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
-    
+    // Modifier button is MS
+    bool mod = buttonSet.ms;
+	
+    // up2 -> up
+    // up -> up (might as well)
     buttonSet.up = buttonSet.up || buttonSet.up2;
-    
-    bool left = buttonSet.left && !(buttonSet.ms);
-    bool right = buttonSet.right && !(buttonSet.ms);
-    bool up = buttonSet.up && !(buttonSet.ms);
-    bool down = buttonSet.down && !(buttonSet.ms);
 
-    bool dLeft = buttonSet.left && buttonSet.ms;
-    bool dRight = buttonSet.right && buttonSet.ms;
-    bool dUp = buttonSet.up && buttonSet.ms;
-    bool dDown = buttonSet.down && buttonSet.ms;
+    // Raw Movement button presses.
+    bool left = buttonSet.left && !(mod);
+    bool right = buttonSet.right && !(mod);
+    bool up = buttonSet.up && !(mod);
+    bool down = buttonSet.down && !(mod);
 
-    bool home = buttonSet.start && buttonSet.ms;        // Xbox
-    bool start = buttonSet.start && !(buttonSet.ms);    // Menu
-    bool back = buttonSet.b && buttonSet.ms;            // View
-    bool b = buttonSet.b && !(buttonSet.ms);
+    // Left stick + Modifer button -> D-Pad
+    bool dLeft = buttonSet.left && mod;
+    bool dRight = buttonSet.right && mod;
+    bool dUp = buttonSet.up && mod;
+    bool dDown = buttonSet.down && mod;
+
+    // R / B + Modifier Button -> Home / View
+    bool home = buttonSet.r && mod;         // Home
+    bool r = buttonSet.r && !(mod);         // R
+    bool back = buttonSet.b && mod;         // View
+    bool b = buttonSet.b && !(mod);         // B
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
     xInputReport.rightStickPress = buttonSet.my;
     xInputReport.leftStickPress = buttonSet.mx;
     xInputReport.back = back;
-    xInputReport.start = start;
+    xInputReport.start = buttonSet.start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
@@ -35,17 +42,17 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.zl = buttonSet.ls;
     xInputReport.zr = buttonSet.z;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;
+    xInputReport.pad1 = 0;									// Inaccessible
     xInputReport.a = buttonSet.a;
     xInputReport.b = b;
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
-	xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
-	xInputReport.rightTrigger = buttonSet.r ? 255 : 0;
-	xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
-	xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
-	xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-	xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+    xInputReport.leftTrigger = buttonSet.l ? 255 : 0;
+    xInputReport.rightTrigger = r ? 255 : 0;
+    xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
 };
 
 // Map face and shoulder buttons to top two rows on right side. We're a fightstick now.
@@ -54,7 +61,6 @@ void actuateXbox360Report(GpioToButtonSets::F1::ButtonSet buttonSet) {
 // MX and A are LS Press and RS Press.
 // L is a modifier: L+Start = Home, L+Left/Right/Up/Down = Dpad left/right/up/down, L+MY = Back
 void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
-
     // Modifier button is L
     bool mod = buttonSet.l;
 
@@ -76,13 +82,11 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool dUp = buttonSet.up && mod;
     bool dDown = buttonSet.down && mod;
 
-    // R / R + Modifier button -> R / Home
-    bool r = buttonSet.r && (!mod);
-    bool home = buttonSet.r && mod;
-
-    // B / B + Modifier Button -> B / Back
-    bool back = buttonSet.b && mod;
-    bool b = buttonSet.b && !(mod);
+    // R / B + Modifier Button -> Home / View
+    bool home = buttonSet.r && mod;         // Home
+    bool r = buttonSet.r && !(mod);         // R
+    bool back = buttonSet.b && mod;         // View
+    bool b = buttonSet.b && !(mod);         // B
 
     USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
     xInputReport.reportId = 0;
@@ -97,7 +101,7 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.zl = buttonSet.z;
     xInputReport.zr = zr;
     xInputReport.home = home;
-    xInputReport.pad1 = 0;
+    xInputReport.pad1 = 0;									// Inaccessible
     xInputReport.a = b;
     xInputReport.b = buttonSet.x;
     xInputReport.x = r;
@@ -110,6 +114,82 @@ void actuateLeverlessReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0x7FFF : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0; // Up overrides down
 };
 
+// Basic-ass DAC Algorithm for Mutliversus. Copied from actuateXbox360Report() so 
+// it doesn't have movement modifiers or non-neutral SOCD yet.
+void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
+    // Modifier button is L
+    bool mod = buttonSet.l;
+	
+    // up2 -> up
+    // up -> up (might as well)
+    buttonSet.up = buttonSet.up || buttonSet.up2;
+
+    // MX / MY + Modifier Button -> L3 / R3
+    bool mx = buttonSet.mx && !(mod);
+    bool my = buttonSet.my && !(mod);
+    bool l3 = buttonSet.mx && mod;
+    bool r3 = buttonSet.my && mod;
+
+    // Raw movement on left stick.
+    bool left = buttonSet.left && !(mod);
+    bool right = buttonSet.right && !(mod);
+    bool up = buttonSet.up && !(mod);
+    bool down = buttonSet.down && !(mod);
+
+    // Resolve SOCD on left stick. (Neutral)
+
+    
+    // Apply Modifier(s) to left stick.
+    // lx_coord = ;
+    // ly_coord = ;
+    
+    // Resolve SOCD on right stick (Neutral).
+
+    
+    // Apply Modifier(s) to right stick.
+    // rx_coord = ;
+    // ry_coord = ;
+	
+    // Left stick + Modifer button -> D-Pad
+    bool dLeft = buttonSet.left && mod;
+    bool dRight = buttonSet.right && mod;
+    bool dUp = buttonSet.up && mod;
+    bool dDown = buttonSet.down && mod;
+	
+    // R / B + Modifier Button -> Home / View
+    bool home = buttonSet.r && mod;         // Home
+    bool r = buttonSet.r && !(mod);         // R
+    bool back = buttonSet.b && mod;         // View
+    bool b = buttonSet.b && !(mod);         // B
+
+    // LS -> LB
+    // MS -> LT
+
+    USBConfigurations::Xbox360::ControllerReport &xInputReport = USBConfigurations::Xbox360::xInputReport;
+    xInputReport.reportId = 0;
+    xInputReport.rightStickPress = l3;                       // MX + L
+    xInputReport.leftStickPress = r3;                        // MY + L
+    xInputReport.back = back;
+    xInputReport.start = buttonSet.start;
+    xInputReport.dRight = dRight;
+    xInputReport.dLeft = dLeft;
+    xInputReport.dDown = dDown;
+    xInputReport.dUp = dUp;
+    xInputReport.zl = buttonSet.ls;                         // LS = LB
+    xInputReport.zr = buttonSet.z;
+    xInputReport.home = home;
+    xInputReport.pad1 = 0;                                  // Inaccessible
+    xInputReport.a = buttonSet.a;
+    xInputReport.b = b;
+    xInputReport.x = buttonSet.x;
+    xInputReport.y = buttonSet.y;
+    xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
+    xInputReport.rightTrigger = r ? 255 : 0;
+    xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
+};
 
 }
 }
