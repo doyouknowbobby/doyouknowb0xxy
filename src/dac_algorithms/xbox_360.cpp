@@ -137,17 +137,15 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     bool down = buttonSet.down && !(mod);
 
     // Resolve SOCD on left stick. (Neutral)
-    uint8_t lx_coord = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
-    uint8_t ly_coord = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+
     
     // Apply Modifier(s) to left stick.
     // lx_coord = ;
     // ly_coord = ;
     
     // Resolve SOCD on right stick (Neutral).
-    uint8_t rx_coord = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-    uint8_t ry_coord = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
 
+    
     // Apply Modifier(s) to right stick.
     // rx_coord = ;
     // ry_coord = ;
@@ -187,10 +185,10 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
     xInputReport.rightTrigger = r ? 255 : 0;
-    xInputReport.leftStickX = lx_coord;
-    xInputReport.leftStickY = ly_coord;
-    xInputReport.rightStickX = rx_coord;
-    xInputReport.rightStickY = ry_coord;
+    xInputReport.leftStickX = left && right ? 0 : left ? 0x8000 : right ? 0x7FFF : 0;
+    xInputReport.leftStickY = down && up ? 0 : down ? 0x8000 : up ? 0x7FFF : 0;
+    xInputReport.rightStickX = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
+    xInputReport.rightStickY = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
 };
 
 }
