@@ -146,7 +146,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     
     // Resolve SOCD on right stick (Neutral).
     uint8_t rx_coord = buttonSet.cLeft && buttonSet.cRight ? 0 : buttonSet.cLeft ? 0x8000 : buttonSet.cRight ? 0x7FFF : 0;
-    uint8_t ry_coord = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0
+    uint8_t ry_coord = buttonSet.cDown && buttonSet.cUp ? 0 : buttonSet.cDown ? 0x8000 : buttonSet.cUp ? 0x7FFF : 0;
 
     // Apply Modifier(s) to right stick.
     // rx_coord = ;
@@ -172,7 +172,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.rightStickPress = l3;                       // MX + L
     xInputReport.leftStickPress = r3;                        // MY + L
     xInputReport.back = back;
-    xInputReport.start = start;
+    xInputReport.start = buttonSet.start;
     xInputReport.dRight = dRight;
     xInputReport.dLeft = dLeft;
     xInputReport.dDown = dDown;
@@ -186,7 +186,7 @@ void actuateMultiversusReport(GpioToButtonSets::F1::ButtonSet buttonSet) {
     xInputReport.x = buttonSet.x;
     xInputReport.y = buttonSet.y;
     xInputReport.leftTrigger = buttonSet.ms ? 255 : 0;      // MS = LT
-    xInputReport.rightTrigger = r ? 255 : 0
+    xInputReport.rightTrigger = r ? 255 : 0;
     xInputReport.leftStickX = lx_coord;
     xInputReport.leftStickY = ly_coord;
     xInputReport.rightStickX = rx_coord;
